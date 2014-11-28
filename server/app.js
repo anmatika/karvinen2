@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var foo = require('./routes/foo');
 var app = express();
 
 // uncomment after placing your favicon in /public
@@ -35,6 +35,8 @@ if (app.get('env') === 'development') {
             error: err
         });
     });
+
+
 }
 
 /**
@@ -55,4 +57,9 @@ if (app.get('env') === 'production') {
         });
     });
 }
+/**
+* Routes
+*/
+app.use('/foo', foo);
+
 module.exports = app;

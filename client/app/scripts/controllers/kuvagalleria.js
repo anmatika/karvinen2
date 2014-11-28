@@ -33,6 +33,14 @@
 
    function prepareSlides_Hardcoded() {  
 
+   	// posting to our server/routes/foo
+   	$http.post('/foo').success(function(data){
+   		console.log('foo response :' + data.msg);
+   	}).
+   	error(function(data){
+
+   	});
+
 	var slides = $scope.slides1 = [
 		{
 			image: '/images/galleria/1/1.jpg'
