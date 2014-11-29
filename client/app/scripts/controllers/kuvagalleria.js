@@ -1,5 +1,4 @@
 'use strict';
-
 /** 
  * @ngdoc function
  * @name karvinenApp.controller:KuvagalleriaCtrl
@@ -11,75 +10,20 @@
  .controller('KuvagalleriaCtrl', function ($scope, $http) {
    		  
     function prepareSlides() {  
+	    var images = {};
+	   	// posting to our server/routes/foo
+	   	$http.post('/foo').success(function(data){
+	   		console.log('foo response :' + data.msg);
+	   		images = data;
+	   		$scope.myInterval = 5000;
+	    	$scope.slides1 = images.images_1;	
+	    	$scope.slides2 = images.images_2;	
+	   	}).
+	   	error(function(data){
 
-	   $scope.myInterval = 5000;
-
-	    $http.get('images/galleria/1.json').
-	    success(function(data, status, headers, config) {
-	      $scope.slides1 = data;
-	    }).
-	    error(function(data, status, headers, config) {
-	      // log error
-	    });
-
-	    $http.get('images/galleria/2.json').
-	    success(function(data, status, headers, config) {
-	      $scope.slides2 = data;
-	    }).
-	    error(function(data, status, headers, config) {
-	      // log error
-	    });
-   }
-
-   function prepareSlides_Hardcoded() {  
-
-   	// posting to our server/routes/foo
-   	$http.post('/foo').success(function(data){
-   		console.log('foo response :' + data.msg);
-   	}).
-   	error(function(data){
-
-   	});
-
-	var slides = $scope.slides1 = [
-		{
-			image: '/images/galleria/1/1.jpg'
-		},
-		{
-			image: '/images/galleria/1/2.jpg'
-		},
-		{
-			image: '/images/galleria/1/3.jpg'
-		},
-		{
-			image: '/images/galleria/1/4.jpg'
-		},
-		{
-			image: '/images/galleria/1/5.jpg'
-		},
-		{
-			image: '/images/galleria/1/6.jpg'
-		}
-   ];
-
-   $scope.slides2 = [
-		{
-			image: '/images/galleria/2/2.jpg'
-		},
-		{
-			image: '/images/galleria/2/3.jpg'
-		},
-		{
-			image: '/images/galleria/2/4.jpg'
-		}	
-   	];
-		
+	   	});
    }
    
-   prepareSlides_Hardcoded();
-
-   return {
-   		prepareSlides: prepareSlides
-   	};
-     
+   prepareSlides();
  });
+
