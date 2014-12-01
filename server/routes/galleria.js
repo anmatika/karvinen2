@@ -3,7 +3,8 @@ var express = require('express');
 
 // Initialize the Router
 var router = express.Router();
-// Setup the Route
+
+// Setup the Route /galleria
 router.post('/', function (req, res) {
 
     // show the request body in the command line
@@ -43,6 +44,13 @@ router.post('/', function (req, res) {
 			},
 		]
     });
+});
+
+// Setup a route /galleria/folders
+router.post('/folders', function(req, res){
+	res.json(
+			{'msg': 'tadaa'}
+		);
 });
 
 // Expose the module
