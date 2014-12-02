@@ -1,5 +1,7 @@
 // Include Express
 var express = require('express');
+var fs = require('fs');
+var q = require('promised-io/promise'); // >=v2.4
 
 // Initialize the Router
 var router = express.Router();
@@ -46,11 +48,37 @@ router.post('/', function (req, res) {
     });
 });
 
-// Setup a route /galleria/folders
-router.post('/folders', function(req, res){
-	res.json(
-			{'msg': 'tadaa'}
-		);
+var images = [];
+var response = {};
+var traverseFileSystem = function (currentPath) {
+    console.log(currentPath);
+    var files = fs.readdirSync(currentPath);
+    for (var i in files) {
+       var currentFile = currentPath + '/' + files[i];
+       var stats = fs.statSync(currentFile);
+       if (stats.isFile()) {
+       	console.log(currentFile);
+       	images.push(currentFile);
+       }
+      else if (stats.isDirectory()) {
+             
+      		 var directories = currentFile.split('/');
+      		 var directory = directories[directories.length - 1];
+
+      		 console.log(directory);
+      		 // response[directory] = {};
+             traverseFileSystem(currentFile);
+           }
+     }
+   };
+
+// Setup a route /galleria/images
+router.post('/images', function(req, res){
+
+	traverseFileSystem('./dist/images/galleria');
+	res.json({
+		images: images
+	})
 });
 
 // Expose the module

@@ -28,9 +28,9 @@
    }
 
    function folders() {
-   	$http.post('/galleria/folders')
+   	$http.post('/galleria/images')
    		.success(function(data){
-   			console.log(data.msg);			
+   			console.log(data);			
    		}).
    		error(function(data){
    			console.log(data);
