@@ -48,8 +48,22 @@ router.post('/', function (req, res) {
     });
 });
 
+
+// GOAL:
+// {
+//     "1": [
+//         "/galleria/images/1/abc.jpg",
+//         "/galleria/images/1/foo.jpg"
+//     ],
+//     "2": [
+//         "/galleria/images/2/fds.jpg",
+//         "/galleria/images/2/uio.jpg"
+//     ]
+// }
+
 var images = [];
 var response = {};
+
 var traverseFileSystem = function (currentPath) {
     console.log(currentPath);
     var files = fs.readdirSync(currentPath);
@@ -58,26 +72,30 @@ var traverseFileSystem = function (currentPath) {
        var stats = fs.statSync(currentFile);
        if (stats.isFile()) {
        	console.log(currentFile);
+       	// ['/foo.png', /abc.png', ...]
        	images.push(currentFile);
-       }
+      }
       else if (stats.isDirectory()) {
-             
-      		 var directories = currentFile.split('/');
-      		 var directory = directories[directories.length - 1];
+  		 
+  		 var directories = currentFile.split('/');
+  		 var directory = directories[directories.length - 1];
 
-      		 console.log(directory);
-      		 // response[directory] = {};
-             traverseFileSystem(currentFile);
-           }
+  		 console.log(directory);
+  		 // response:{1:[], 2:[], ...}
+  		 images = [];
+  		 response[directory] = images;
+
+         traverseFileSystem(currentFile);
+       }
      }
    };
 
 // Setup a route /galleria/images
 router.post('/images', function(req, res){
-
 	traverseFileSystem('./dist/images/galleria');
+	
 	res.json({
-		images: images
+		images: response
 	})
 });
 
