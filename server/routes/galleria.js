@@ -73,7 +73,11 @@ var traverseFileSystem = function (currentPath) {
        if (stats.isFile()) {
        	console.log(currentFile);
        	// ['/foo.png', /abc.png', ...]
-       	images.push(currentFile);
+       	
+		var f = currentFile.split('/');
+  		var fileName = f[f.length - 1];
+
+       	images.push(fileName);
       }
       else if (stats.isDirectory()) {
   		 
