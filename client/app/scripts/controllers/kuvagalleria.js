@@ -36,13 +36,19 @@
    			// 	"foldername_2": ["abc.png"], "fii.png"]
    			// }
    			var slides = [];
-   			var slideHeaders = [];
    			var img;
+   			var slideItem = {};
    			// iterate properties(folders) of object "galleria_1", galleria_2...
    			for (var folder in data.images){
    				console.log("folder: " + folder);
    				var fileNames = data.images[folder];
-   				slideHeaders.push(folder);
+   				
+   				slideItem = { 
+   							  header: folder,
+   							  images: [] 
+   							};
+
+   				console.log(slideItem);
    				console.log(fileNames);
    				// iterate array of fileNames
    				for (var i in fileNames){
@@ -51,29 +57,35 @@
 				 	img = {
    					 	"image": "/images/galleria/" + folder + "/" + fileName
    					 }
+   					slideItem.images.push(img);
    					console.log(img);
-   					slides.push(img);   					
+   					   					
    				}
+
+   				slides.push(slideItem);   				
    			}
 
    			console.log(slides);
-   			console.log(slideHeaders);
-   			$scope.slideItems = [
-   					{ 
-   						header: "galleria_1",
-   					  	images: [ 
-   							{image: '/images/galleria/galleria_1/1.jpg'},
-   							{image: '/images/galleria/galleria_1/2.jpg'}
-						]
-					},
-					{ 
-   						header: "2",
-   					  	images: [ 
-   							{ image: '/images/galleria/2/2.jpg' },
-   							{ image: '/images/galleria/2/3.jpg'}
-						]
-					}
-   			]
+   			$scope.slideItems = slides;
+	   		
+	   		// GOAL:
+	   		//
+	   		// 	$scope.slideItems = [
+	   		// 			{ 
+	   		// 				header: "galleria_1",
+	   		// 			  	images: [ 
+	   		// 					{ image: '/images/galleria/galleria_1/1.jpg' },
+	   		// 					{ image: '/images/galleria/galleria_1/2.jpg' }
+						// 	]
+						// },
+						// { 
+	   		// 				header: "2",
+	   		// 			  	images: [ 
+	   		// 					{ image: '/images/galleria/2/2.jpg' },
+	   		// 					{ image: '/images/galleria/2/3.jpg' }
+						// 	]
+						// }
+	   		// 	]
    		}).
    		error(function(data){
    			console.log(data);
