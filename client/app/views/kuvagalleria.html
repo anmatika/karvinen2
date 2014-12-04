@@ -11,23 +11,23 @@ ng-controller="KuvagalleriaCtrl"> -->
 			<hr>
 			<hr class="visible-xs">
 
-			<div class="row slider">
+			<div class="row slider" ng-repeat="slideItem in slideItems" >
 				<div class="row">
-					<strong>Hanko 2014</strong>
-				</div>
+					<strong>{{ slideItem.header }}</strong>
+				</div>				
 				<div class="row">
 					<carousel interval="myInterval">
-						<slide ng-repeat="slide in slides1" active="slide.active">
-							<img ng-src="{{slide.image}}" style="margin:auto;">
+						<slide ng-repeat="slide in slideItem.images" active="slide.active">
+							<img ng-src="{{ slide.image }}" style="margin:auto;">
 							<div class="carousel-caption">
-								<p>{{slide.text}}</p>
+								<p>{{ slide.text }}</p>
 							</div>
 						</slide>
 					</carousel>
 				</div>
 			</div>
 	
-			<div class="row slider">
+			<!-- <div class="row slider">
 				<div class="row">
 					<strong>Karvisen 15-vuotisjuhlat</strong>
 				</div>
@@ -41,7 +41,7 @@ ng-controller="KuvagalleriaCtrl"> -->
 						</slide>
 					</carousel>		
 				</div>
-			</div>
+			</div> -->
 		</div>	
 	</div>
 </div>
