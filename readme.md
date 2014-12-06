@@ -4,8 +4,11 @@ http://start.jcolemorrison.com/building-an-angular-and-express-app-part-1/
 # Quick start | run server
  cd /server && npm test
 
-#Build to dist
+# Build to dist
 cd /client && grunt build --force
 
-#run server production mode
+# Run server at production mode
 cd /server && npm start
+
+# Test
+cd /client && grunt karma

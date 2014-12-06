@@ -7,46 +7,46 @@ var q = require('promised-io/promise'); // >=v2.4
 var router = express.Router();
 
 // Setup the Route /galleria
-router.post('/', function (req, res) {
+// router.post('/', function (req, res) {
 
-    // show the request body in the command line
-    console.log(req.body);
-    // return a json response to angular
-    res.json({
-        'msg': 'success!',
-        'images_1': [
-	        {
-				image: '/images/galleria/1/1.jpg'
-			},
-			{
-				image: '/images/galleria/1/2.jpg'
-			},
-			{
-				image: '/images/galleria/1/3.jpg'
-			},
-			{
-				image: '/images/galleria/1/4.jpg'
-			},
-			{
-				image: '/images/galleria/1/5.jpg'
-			},
-			{
-				image: '/images/galleria/1/6.jpg'
-			}
-		],
-		'images_2': [
-			{
-				image: '/images/galleria/2/2.jpg'
-			},
-			{
-				image: '/images/galleria/2/3.jpg'
-			},
-			{
-				image: '/images/galleria/2/4.jpg'
-			},
-		]
-    });
-});
+//     // show the request body in the command line
+//     console.log(req.body);
+//     // return a json response to angular
+//     res.json({
+//         'msg': 'success!',
+//         'images_1': [
+// 	        {
+// 				image: '/images/galleria/1/1.jpg'
+// 			},
+// 			{
+// 				image: '/images/galleria/1/2.jpg'
+// 			},
+// 			{
+// 				image: '/images/galleria/1/3.jpg'
+// 			},
+// 			{
+// 				image: '/images/galleria/1/4.jpg'
+// 			},
+// 			{
+// 				image: '/images/galleria/1/5.jpg'
+// 			},
+// 			{
+// 				image: '/images/galleria/1/6.jpg'
+// 			}
+// 		],
+// 		'images_2': [
+// 			{
+// 				image: '/images/galleria/2/2.jpg'
+// 			},
+// 			{
+// 				image: '/images/galleria/2/3.jpg'
+// 			},
+// 			{
+// 				image: '/images/galleria/2/4.jpg'
+// 			},
+// 		]
+//     });
+// });
 
 
 // GOAL:
@@ -72,8 +72,8 @@ var traverseFileSystem = function (currentPath) {
        var stats = fs.statSync(currentFile);
        if (stats.isFile()) {
        	console.log(currentFile);
+
        	// ['/foo.png', /abc.png', ...]
-       	
 		var f = currentFile.split('/');
   		var fileName = f[f.length - 1];
 
@@ -95,7 +95,7 @@ var traverseFileSystem = function (currentPath) {
    };
 
 // Setup a route /galleria/images
-router.post('/images', function(req, res){
+router.get('/', function(req, res){
 	traverseFileSystem('./dist/images/galleria');
 	
 	res.json({
