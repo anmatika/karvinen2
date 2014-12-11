@@ -1,7 +1,7 @@
 // Include Express
 var express = require('express');
 var fs = require('fs');
-var q = require('promised-io/promise'); // >=v2.4
+
 
 // Initialize the Router
 var router = express.Router();
@@ -96,7 +96,8 @@ var traverseFileSystem = function (currentPath) {
 
 // Setup a route /galleria/images
 router.get('/', function(req, res){
-	traverseFileSystem('./dist/images/galleria');
+	// traverseFileSystem('./dist/images/galleria');
+	traverseFileSystem(karvinenGalleriaImagePath);
 	
 	res.json({
 		images: response

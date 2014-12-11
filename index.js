@@ -2,6 +2,8 @@
 
 var express = require('express');
 var path = require('path');
+var galleria = require('./server/routes/galleria');
+karvinenGalleriaImagePath = './server/dist/images/galleria'
 
 var app = express();
 
@@ -19,4 +21,10 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(process.env.PORT || 3000);
+
+/**
+* Routes
+*/
+app.use('/galleria', galleria);
+
 // module.exports = app;

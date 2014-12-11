@@ -11,7 +11,6 @@ describe('Controller: KuvagalleriaCtrl', function () {
     $controller,
     $rootScope;
 
-
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($injector) {
     $httpBackend = $injector.get('$httpBackend');
@@ -58,13 +57,9 @@ describe('Controller: KuvagalleriaCtrl', function () {
             ]
         }
     }
+    
     var authRequestHandler = $httpBackend.when('GET', '/galleria')
                             .respond(images);
-
-    console.log(scope);
-    
-
-
-     // console.log(authRequestHandler);
-  })
+                            
+    })
 });

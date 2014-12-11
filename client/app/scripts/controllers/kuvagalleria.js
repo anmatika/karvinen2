@@ -18,6 +18,4 @@
 			console.log(reason);
 		});
   
-      
-   // getSlides();
  });

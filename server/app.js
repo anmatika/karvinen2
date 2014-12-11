@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var galleria = require('./routes/galleria');
+karvinenGalleriaImagePath = './dist/images/galleria';
 var app = express();
 
 // uncomment after placing your favicon in /public
@@ -26,6 +27,7 @@ if (app.get('env') === 'development') {
     // This covers serving up the index page
     app.use(express.static(path.join(__dirname, '../client/.tmp')));
     app.use(express.static(path.join(__dirname, '../client/app')));
+
 
     // Error Handling
     app.use(function(err, req, res, next) {
