@@ -10,12 +10,17 @@
  .controller('KuvagalleriaCtrl', function ($scope, $http, $q, galleriaSvc) {
 
 	$scope.myInterval = 5000;
-	galleriaSvc.getSlides()
-		.then(function(slides){
-			$scope.slideItems = slides;
-		},
-		function(reason){
-			console.log(reason);
-		});
-  
+	
+	$scope.getSlides = function () {
+		galleriaSvc.getSlides()
+			.then(function(slides){
+				$scope.slideItems = slides;
+			},
+			function(reason){
+				console.log(reason);
+			});
+  	}
+
+  	$scope.getSlides();
+
  });

@@ -47,7 +47,7 @@ angular.module('karvinenApp')
 	   				slides.push(slideItem);   				
 	   			}
 
-	   			console.log(slides);
+	   			// console.log(slides);
 		   		
 	   			deferred.resolve(slides);
 

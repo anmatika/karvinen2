@@ -26,7 +26,7 @@ describe('Controller: KuvagalleriaCtrl', function () {
 
 // 
   it('KuvagalleriaCtrl.getSlides should been called', function () {
-      // spyOn(KuvagalleriaCtrl, 'getSlides').and.callThrough();
+       // expect(scope.getSlides).toHaveBeenCalled();
   });
 
   it('Expect interval to be 5000', function() {
@@ -34,32 +34,12 @@ describe('Controller: KuvagalleriaCtrl', function () {
   });
 
   it('expect POST', function(){
-    $httpBackend.expectGET('/galleria').respond(200, '');
     
   });
 
   it('', function(){
 
-    var images = {
-        "images": {
-            "galleria_1": [
-                "2.jpg",
-                "3.jpg",
-                "4.jpg"
-            ],
-            "galleria_2": [
-                "1.jpg",
-                "2.jpg",
-                "3.jpg",
-                "4.jpg",
-                "5.jpg",
-                "6.jpg"
-            ]
-        }
-    }
+
+  });
     
-    var authRequestHandler = $httpBackend.when('GET', '/galleria')
-                            .respond(images);
-                            
-    })
 });

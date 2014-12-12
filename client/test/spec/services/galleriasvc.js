@@ -2,7 +2,6 @@
 
 describe('Service: galleriaSvc', function () {
 
-
   // load the service's module
   beforeEach(module('karvinenApp'));
 
@@ -73,10 +72,9 @@ describe('Service: galleriaSvc', function () {
       resolvedData = data;
     });
 
-    // run the mock
+    // run the $http.get('/galleria')
     $httpBackend.flush();
 
     expect(resolvedData).toEqual(expectedResolvedData);
   });
-
 });
