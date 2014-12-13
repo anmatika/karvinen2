@@ -18,5 +18,5 @@ cd / && jitsu deploy
 
 # Protractor 
 cd /server && npm test
-cd /client/node_modules/protractor/bin && ./webdriver-manager start
-cd /client/node_modules/protractor && protractor conf.js
+cd client/node_modules/protractor/bin && ./webdriver-manager start
+cd client/node_modules/protractor && protractor conf.js

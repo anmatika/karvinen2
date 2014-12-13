@@ -65,24 +65,31 @@ module.exports = function (grunt) {
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       },
-      protractor: {
-        options: {
-        configFile: "node_modules/protractor/conf.js", // config file
-        keepAlive: true, // If false, the grunt process stops when the test fails.
-        noColor: false, // If true, protractor will not use colors in its output.
-        args: {
-          // Arguments passed to the command
-        }
-      },
-      your_target: {   // Grunt requires at least one target to run so you can simply put 'all: {}' here too.
-        options: {
-            configFile: "e2e.conf.js", // Target-specific config file
-            args: {} // Target-specific arguments
-          }
-        },
-      }
     },
-
+    protractor: {
+      options: {
+            configFile: 'test/e2e/conf.js',
+            keepAlive: true, // If false, the grunt process stops when the test fails.
+            noColor: false, // If true, protractor will not use colors in its output.
+            args: {
+                // Arguments passed to the command
+            }
+        },
+      chrome: {
+          options: {
+                args: {
+                    browser: "chrome"
+                }
+            }
+      },
+      firefox: {
+          options: {
+              args: {
+                  browser: "firefox"
+              }
+          }
+        }
+    },
     // The actual grunt server settings
     connect: {
       options: {
@@ -95,17 +102,8 @@ module.exports = function (grunt) {
         options: {
           open: true,
           middleware: function (connect) {
-
-            function hello(req, res, next) {
-              if (req.url === '/hello') {
-                res.end("hello!");
-              } else {
-                return next();
-              }
-            }
-
-            var defaultMiddleware = [
-              hello,              
+            
+            var defaultMiddleware = [                          
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -140,57 +138,6 @@ module.exports = function (grunt) {
         base: '<%= yeoman.dist %>'
         }
       },      
-      dist3: {
-        options: {
-          open: true,
-          // port: 9001,
-          base: '<%= yeoman.dist %>',
-          middleware: function(connect) {
-            function hello(req, res, next) {
-
-              // Create a Connect app
-              var app = connect();
-
-              // Configure the app
-              app.use(connect.logger()); // Logs HTTP/HTTPS requests
-              app.use(connect.favicon(__dirname + '/dist/favicon.ico')); // Serve a favicon file
-              app.use(connect.static(__dirname + '/dist')); // Static file hosting from the `./public` directory
-              app.use(connect.compress()); // Compress all responses using Gzip
-              app.use(connect.json()); // Parse JSON request body into `request.body`
-              app.use(connect.urlencoded()); // Parse form in request body into `request.body`
-              app.use(connect.cookieParser()); // Parse cookies in the request headers into `request.cookies`
-              app.use(connect.query()); // Parse query string into `request.query`
-              app.use(connect.timeout(20000)); // Set maximum time to complete a request to 20 seconds (20000 ms)
-              
-              // Logging middleware
-              app.use(function(request, response, next) {
-                console.log("In comes a " + request.method + " to " + request.url);
-                next();
-              });
-              
-              app.use('/foo', function fooMiddleware(req, res, next) {
-                // req.url starts with "/foo"                                
-                res.end('/bower.js');
-                next();
-              });
-              // The next middleware function in the chain
-              app.use('/nice', function (request, response, next) {
-                response.end('hello nice world\n');
-                next();
-              });
-
-              // Listen for HTTP/HTTPS conncections on port 3000
-              // app.listen(80);
-              app.listen(process.env.PORT || 9001);  
-              console.log(__dirname);
-            }
-
-            return [hello]
-
-          }
-
-        }
-      }
     },
 
     // Make sure code styles are up to par and there are no obvious mistakes
@@ -504,6 +451,14 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
+  grunt.registerTask('e2e', [
+    // 'jshint',
+    'clean:server',
+    'connect:test', 
+    'protractor'
+  ]);
+  
+
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
@@ -526,4 +481,5 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
 };
