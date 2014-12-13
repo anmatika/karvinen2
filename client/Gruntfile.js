@@ -68,7 +68,7 @@ module.exports = function (grunt) {
     },
     protractor: {
       options: {
-            configFile: 'test/e2e/conf.js',
+            configFile: 'test/protractor.conf.js',
             keepAlive: true, // If false, the grunt process stops when the test fails.
             noColor: false, // If true, protractor will not use colors in its output.
             args: {
@@ -413,7 +413,7 @@ module.exports = function (grunt) {
     // Test settings
     karma: {
       unit: {
-        configFile: 'test/unit/karma.conf.js',
+        configFile: 'test/karma.conf.js',
         //singleRun: true
         autoWatch: true
       }
@@ -458,7 +458,7 @@ module.exports = function (grunt) {
     'connect:test',
     'karma'
   ]);
-  
+
   grunt.registerTask('e2e', [
     'clean:server',
     'connect:test', 
