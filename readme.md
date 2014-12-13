@@ -10,13 +10,16 @@ cd /client && grunt build --force
 # Run server at production mode (/server/dist)
 cd /server && npm start
 
-# Test
-cd /client && grunt karma
+# Unit test
+cd /client && grunt unit
+
+# E2e test
+cd /client && grunt e2e
 
 # Deploy to Nodejitsu
 cd / && jitsu deploy
 
-# Protractor 
+# Protractor (manual e2e test) 
 cd /server && npm test
 cd client/node_modules/protractor/bin && ./webdriver-manager start
 cd client/node_modules/protractor && protractor conf.js
