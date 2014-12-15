@@ -46,6 +46,10 @@ angular
         templateUrl: 'views/ruokalista.html',
         controller: 'RuokalistaCtrl'
       })
+      .when('/vieraskirja', {
+        templateUrl: 'views/vieraskirja.html',
+        controller: 'VieraskirjaCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

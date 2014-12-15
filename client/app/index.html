@@ -54,8 +54,9 @@
               <li ng-class="{ active: isActive('/ryhmat')}"><a ng-href="#/ryhmat">Ryhmät</a></li>
               <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Retket ja virkistys</a></li>
               <li ng-class="{ active: isActive('/hallitus')}"><a ng-href="#/hallitus">Hallitus</a></li>
-              <li ng-class="{ active: isActive('/kuvagalleria')}"><a ng-href="#/kuvagalleria">Kuvagalleria</a></li>
+              <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Kuvagalleria</a></li>
               <li ng-class="{ active: isActive('/ruokalista')}"><a ng-href="#/ruokalista">Ruokalista</a></li>
+              <li ng-class="{ active: isActive('/vieraskirja')}"><a ng-href="#/vieraskirja">Vieraskirja</a></li>
             </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -122,6 +123,7 @@
       <script src="scripts/controllers/ryhmat.js"></script>
       <script src="scripts/controllers/ruokalista.js"></script>
       <script src="scripts/services/galleriasvc.js"></script>
+      <script src="scripts/controllers/vieraskirja.js"></script>
       <!-- endbuild -->
       
     </body>

@@ -4,12 +4,16 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var galleria = require('./routes/galleria');
 karvinenGalleriaImagePath = './dist/images/galleria';
 var app = express();
+var Message = mongoose.model('Message', {
+    text: String
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -22,6 +26,8 @@ app.use(cookieParser());
  * Development Settings
  */
 if (app.get('env') === 'development') {
+    mongoose.connect('mongodb://localhost/karvinenry-dev');  
+
     // This will change in production since we'll be using the dist folder
     app.use(express.static(path.join(__dirname, '../client')));
     // This covers serving up the index page
@@ -36,6 +42,24 @@ if (app.get('env') === 'development') {
             message: err.message,
             error: err
         });
+    });
+
+    app.post('/message', function (req, res){
+        Message.create({
+            //text : req.body.text,
+            text : 'testi',
+            done : false
+        }, function(err, message){
+           if (err)
+                res.send(err);
+
+            // get and return all the todos after you create another
+            Message.find(function(err, messages) {
+                if (err)
+                    res.send(err)
+                res.json(messages);
+            }); 
+        });      
     });
 }
 
