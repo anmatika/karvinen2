@@ -39,6 +39,6 @@ angular.module('karvinenApp')
 
 		return {
 			getPosts: getPosts,
-			sendMessage, sendMessage
+			sendMessage: sendMessage
 		};
 	});

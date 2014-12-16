@@ -1,6 +1,6 @@
 // Ref: https://github.com/cmarin/MongoDB-Node-Express-Blog/blob/master/postprovider.js
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/karvinenry-dev');  
+mongoose.connect(mongoConn);  
 
 var Schema = mongoose.Schema
 , ObjectId = Schema.ObjectId;

@@ -1,9 +1,11 @@
 // This is server for nodejitsu
+karvinenroutesImagePath = './server/dist/images/galleria'
+mongoConn = 'mongodb://nodejitsu:a770766d005f14f5226cf5cf01276c35@troup.mongohq.com:10096/nodejitsudb9016179079';
 
 var express = require('express');
 var path = require('path');
-var galleria = require('./server/routes/galleria');
-karvinenGalleriaImagePath = './server/dist/images/galleria'
+var routes = require('./server/routes/routes');
+
 
 var app = express();
 
@@ -25,6 +27,6 @@ app.listen(process.env.PORT || 3000);
 /**
 * Routes
 */
-app.use('/galleria', galleria);
+app.use('/routes', routes);
 
 // module.exports = app;
