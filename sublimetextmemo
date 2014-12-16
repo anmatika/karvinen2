@@ -13,8 +13,6 @@ Expand selection to tag - CTRL + SHIFT + A
 SHORTCUTS CUSTOMIZED
 --------------------
 Block comment - CTRL + Å
-
-
-HTMLBeautify-plugin
--------------------
-Beautify - CTRL + SHIFT + ALT + F
+Format JS - CTRL + ALT + Ä
+Beautify HTML - CTRL + SHIFT + ALT + F
+Emmet - Wrap with abbreviation - CTRL + SHIFT + G
