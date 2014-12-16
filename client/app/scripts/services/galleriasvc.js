@@ -14,7 +14,7 @@ angular.module('karvinenApp')
 	   	
 	   	var deferred = $q.defer();
 
-	   	$http.get('/galleria')
+	   	$http.get('/routes/galleria')
 	   		.success(function(data){
 	   			// data comes as
 	   			// images: {

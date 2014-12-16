@@ -8,28 +8,25 @@
  * Controller of the karvinenApp
  */
 angular.module('karvinenApp')
-  .controller('VieraskirjaCtrl', function ($scope, $q, $http) {
-     
-      $scope.sendMessage = function () {
-	   	
-	   	console.log('sendMessage')
-	   	var deferred = $q.defer();
+	.controller('VieraskirjaCtrl', function($scope, vieraskirjaSvc) {
 
-	   	$http.post('/message', {msg: 'sendMessage here'})
-	   		.success(function(data){
+		$scope.sendMessage = function() {
 
-	   			deferred.resolve();
-	   		}).
-   		error(function(data){
-   			console.log(data);
-   			deferred.reject(data);
-   		});
+			vieraskirjaSvc.sendMessage($scope.title, $scope.message)
+				.then(function() {
+					vieraskirjaSvc.getPosts().then(function(posts) {
+						$scope.posts = posts;
+					});
+				});
+		}
 
-   		return deferred.promise;
-   }
+		vieraskirjaSvc.getPosts()
+			.then(function(posts) {
+				$scope.posts = posts;
+			});
 
-   return {
-   	sendMessage: $scope.sendMessage
-   }
-  
-  });
+		return {
+			sendMessage: $scope.sendMessage
+		};
+
+	});
