@@ -1,6 +1,13 @@
 # Follow these instructions
 http://start.jcolemorrison.com/building-an-angular-and-express-app-part-1/
 
+# After Git Clone
+cd /client && npm install
+cd /client && bower install 
+cd /client grunt build --force
+cd /server && npm install
+
+
 # Quick start | run server (/app)
  cd /server && npm test
 
@@ -23,3 +30,6 @@ cd / && jitsu deploy
 cd /server && npm test
 cd client/node_modules/protractor/bin && ./webdriver-manager start
 cd client/node_modules/protractor && protractor conf.js
+
+# Compass scss -> css
+cd /client && grunt watch

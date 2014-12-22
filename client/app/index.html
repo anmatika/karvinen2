@@ -14,6 +14,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/business-casual.css"/>
     <link rel="stylesheet" href="styles/ryhmat.css"/>
     <link rel="stylesheet" href="styles/ruokalista.css"/>
@@ -49,14 +50,23 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="HeaderCtrl">
             <ul class="nav navbar-nav">
-            <li ng-class="{ active: isActive('/')}"><a id="navbar_logo" ng-href="#/"><img class="" src="images/logo_32.png" alt=""></a></li>
+            <li ng-class="{ active: isActive('/')}"><a ng-href="#/">Koti</a> 
+            </li>
               <li ng-class="{ active: isActive('/yhteystiedot')}"><a ng-href="#/yhteystiedot">Yhteystiedot</a></li>
               <li ng-class="{ active: isActive('/ryhmat')}"><a ng-href="#/ryhmat">Ryhmät</a></li>
-              <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Retket ja virkistys</a></li>
+              <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Jäsenyys</a>
+                <ul>
+                  <li ng-class="{ active: isActive('/jaseneksiliittyminen')}"><a ng-href="#/jaseneksiliittyminen">Liittyminen
+                  </a></li>
+                  <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenedut">Jäsenedut</a></li>
+                </ul>
+              </li>
               <li ng-class="{ active: isActive('/hallitus')}"><a ng-href="#/hallitus">Hallitus</a></li>
-              <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Kuvagalleria</a></li>
-              <li ng-class="{ active: isActive('/ruokalista')}"><a ng-href="#/ruokalista">Ruokalista</a></li>
-              <li ng-class="{ active: isActive('/vieraskirja')}"><a ng-href="#/vieraskirja">Vieraskirja</a></li>
+              
+                <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Kuvagalleria</a></li>
+                <li ng-class="{ active: isActive('/ruokalista')}"><a ng-href="#/ruokalista">Ruokalista</a></li>
+                <li ng-class="{ active: isActive('/vieraskirja')}"><a ng-href="#/vieraskirja">Vieraskirja</a></li>
+              
             </ul>
           </div>
           <!-- /.navbar-collapse -->

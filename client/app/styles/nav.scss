@@ -1,0 +1,45 @@
+nav {  
+  // main menu
+  ul {
+    position: relative;
+    li:hover > ul{
+      display: block;
+      background: #FFF;
+    }
+    li{
+      font-size: 1em;
+      a {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+      }
+    }
+    // submenu
+    ul {
+        position: absolute;
+        top: 30px;
+        width: 200px;
+        display: none;
+        margin: 0;
+        // padding-left: 10px;
+        // padding-bottom: 10px;
+        padding: 10px;
+        padding-top: 5px;
+        border: 2px;
+      li {
+        list-style: none;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        a {
+          font-size: 0.9em;
+          padding: 10px !important;
+          text-decoration: none !important;
+        }
+      }
+      li:hover{
+        display: block;
+        background: grey;
+      }
+    }
+    
+  }
+}

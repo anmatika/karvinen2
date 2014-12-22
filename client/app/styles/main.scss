@@ -13,7 +13,7 @@ $font_4: sans-serif;
 $font_5: Roboto;
 $font_6: Open Sans;
 
-body {
+body {  
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 13px;
@@ -48,7 +48,14 @@ body {
   .container {
     max-width: 730px;
   }
+  .navbar {
+    .container {
+      max-width: 1170px;
+    }
+  }
 }
+
+
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid $mercury;
@@ -87,7 +94,7 @@ body {
   //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
   box-shadow: 7px 7px 5px $color_suva_gray_approx;
   font-family: $font_5, $font_6, $font_1, $font_2, $font_3, $font_4;
-  background: url('../images/contemporary_china.png');
+  // background: url('../images/contemporary_china.png');
 }
 .container-narrow > hr {
   margin: 30px 0;
