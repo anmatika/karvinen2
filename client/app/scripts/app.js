@@ -50,6 +50,58 @@ angular
         templateUrl: 'views/vieraskirja.html',
         controller: 'VieraskirjaCtrl'
       })
+      .when('/organisaatiokaavio', {
+        templateUrl: 'views/organisaatiokaavio.html',
+        controller: 'OrganisaatiokaavioCtrl'
+      })
+      .when('/hallinto', {
+        templateUrl: 'views/hallinto.html',
+        controller: 'HallintoCtrl'
+      })
+      .when('/missio', {
+        templateUrl: 'views/missio.html',
+        controller: 'MissioCtrl'
+      })
+      .when('/toimintasuunnitelma', {
+        templateUrl: 'views/toimintasuunnitelma.html',
+        controller: 'ToimintasuunnitelmaCtrl'
+      })
+      .when('/toimintakertomus', {
+        templateUrl: 'views/toimintakertomus.html',
+        controller: 'ToimintakertomusCtrl'
+      })
+      .when('/bussiyhteydet', {
+        templateUrl: 'views/bussiyhteydet.html',
+        controller: 'BussiyhteydetCtrl'
+      })
+      .when('/jasenyys', {
+        templateUrl: 'views/jasenyys.html',
+        controller: 'JasenyysCtrl'
+      })
+      .when('/jaseneksiliittyminen', {
+        templateUrl: 'views/jaseneksiliittyminen.html',
+        controller: 'JaseneksiliittyminenCtrl'
+      })
+      .when('/jasenedut', {
+        templateUrl: 'views/jasenedut.html',
+        controller: 'JasenedutCtrl'
+      })
+      .when('/jasenkysely', {
+        templateUrl: 'views/jasenkysely.html',
+        controller: 'JasenkyselyCtrl'
+      })
+      .when('/jasenkirje', {
+        templateUrl: 'views/jasenkirje.html',
+        controller: 'JasenkirjeCtrl'
+      })
+      .when('/nuoret', {
+        templateUrl: 'views/nuoret.html',
+        controller: 'NuoretCtrl'
+      })
+      .when('/linkit', {
+        templateUrl: 'views/linkit.html',
+        controller: 'LinkitCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

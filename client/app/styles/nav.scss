@@ -1,3 +1,5 @@
+$color_suva_gray_approx: #888888;
+
 nav {  
   // main menu
   ul {
@@ -7,39 +9,47 @@ nav {
       background: #FFF;
     }
     li{
-      font-size: 1em;
+      font-size: 0.9em;
       a {
         padding-top: 10px !important;
         padding-bottom: 10px !important;
+        padding-left: 10px !important;
+        padding-rigth: 10px !important;
       }
+    }
+    li:hover{
+      background-color: #e7e7e7;
     }
     // submenu
     ul {
         position: absolute;
-        top: 30px;
-        width: 200px;
+        top: 35px;
+        width: auto;
         display: none;
         margin: 0;
-        // padding-left: 10px;
-        // padding-bottom: 10px;
         padding: 10px;
         padding-top: 5px;
         border: 2px;
+        z-index: 9999; //menu should be always top of the stack
+        box-shadow: 7px 7px 5px $color_suva_gray_approx;
       li {
         list-style: none;
         padding-top: 5px !important;
         padding-bottom: 5px !important;
+        -webkit-transiton: opacity 1s;
         a {
           font-size: 0.9em;
           padding: 10px !important;
           text-decoration: none !important;
+          white-space: nowrap;
         }
       }
       li:hover{
-        display: block;
-        background: grey;
+        display: inline-block; // makes item size fit the contents
+        background-color: #e7e7e7;
+        
       }
-    }
-    
+    }    
   }
+  
 }

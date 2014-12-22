@@ -50,22 +50,36 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="HeaderCtrl">
             <ul class="nav navbar-nav">
-            <li ng-class="{ active: isActive('/')}"><a ng-href="#/">Koti</a> 
+            <li ng-class="{ active: isActive('/')}"><a ng-href="#/">Koti &#9660;</a> 
+              <ul>
+                <li><a ng-href="#/organisaatiokaavio">Organisaatiokaavio</a></li>
+                <li><a ng-href="#/hallinto">Hallinto ja työntekijät</a></li>
+                <li><a ng-href="#/missio">Missio, visio, arvot ja motto</a></li>
+                <li><a ng-href="#/toimintasuunnitelma">Toimintasuunnitelma</a></li>
+                <li><a ng-href="#/toimintakertomus">Toimintakertomus</a></li>
+              </ul>
             </li>
-              <li ng-class="{ active: isActive('/yhteystiedot')}"><a ng-href="#/yhteystiedot">Yhteystiedot</a></li>
-              <li ng-class="{ active: isActive('/ryhmat')}"><a ng-href="#/ryhmat">Ryhmät</a></li>
-              <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Jäsenyys</a>
+              <li ng-class="{ active: isActive('/yhteystiedot')}"><a ng-href="#/yhteystiedot">Yhteystiedot &#9660;</a>
                 <ul>
-                  <li ng-class="{ active: isActive('/jaseneksiliittyminen')}"><a ng-href="#/jaseneksiliittyminen">Liittyminen
-                  </a></li>
-                  <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenedut">Jäsenedut</a></li>
+                  <li><a ng-href="#/bussiyhteydet">Bussiyhteydet</a></li>
                 </ul>
               </li>
-              <li ng-class="{ active: isActive('/hallitus')}"><a ng-href="#/hallitus">Hallitus</a></li>
+              <li ng-class="{ active: isActive('/ryhmat')}"><a ng-href="#/ryhmat">Ryhmät</a></li>
+              <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Retket</a></li>
+              <li ng-class="{ active: isActive('/jasenyys')}"><a ng-href="#/jasenyys">Jäsenyys &#9660;</a>
+                <ul>
+                  <li ng-class="{ active: isActive('/jaseneksiliittyminen')}"><a ng-href="#/jaseneksiliittyminen">Jäseneksi liittyminen
+                  </a></li>
+                  <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenedut">Jäsenedut</a></li>
+                  <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenkirje">Jäsenkirje</a></li>
+                  <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenkysely">Jäsenkysely</a></li>
+                </ul>
+              </li>
+              <li ng-class="{ active: isActive('/nuoret')}"><a ng-href="#/nuoret">Nuoret</a></li>
               
-                <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Kuvagalleria</a></li>
                 <li ng-class="{ active: isActive('/ruokalista')}"><a ng-href="#/ruokalista">Ruokalista</a></li>
-                <li ng-class="{ active: isActive('/vieraskirja')}"><a ng-href="#/vieraskirja">Vieraskirja</a></li>
+                <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Kuvagalleria</a></li>
+                <li ng-class="{ active: isActive('/linkit')}"><a ng-href="#/linkit">Linkit</a></li>
               
             </ul>
           </div>
@@ -135,6 +149,19 @@
       <script src="scripts/services/galleriasvc.js"></script>
       <script src="scripts/controllers/vieraskirja.js"></script>
       <script src="scripts/services/vieraskirjasvc.js"></script>
+      <script src="scripts/controllers/organisaatiokaavio.js"></script>
+      <script src="scripts/controllers/hallinto.js"></script>
+      <script src="scripts/controllers/missio.js"></script>
+      <script src="scripts/controllers/toimintasuunnitelma.js"></script>
+      <script src="scripts/controllers/toimintakertomus.js"></script>
+      <script src="scripts/controllers/bussiyhteydet.js"></script>
+      <script src="scripts/controllers/jasenyys.js"></script>
+      <script src="scripts/controllers/jaseneksiliittyminen.js"></script>
+      <script src="scripts/controllers/jasenedut.js"></script>
+      <script src="scripts/controllers/jasenkysely.js"></script>
+      <script src="scripts/controllers/jasenkirje.js"></script>
+      <script src="scripts/controllers/nuoret.js"></script>
+      <script src="scripts/controllers/linkit.js"></script>
       <!-- endbuild -->
       
     </body>
