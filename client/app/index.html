@@ -20,149 +20,158 @@
     <link rel="stylesheet" href="styles/ruokalista.css"/>
     <link rel="stylesheet" href="styles/kuvagalleria.css"/>
     <!-- endbuild -->
-    <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>    
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    </head>
-    <body ng-app="karvinenApp">
-      <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-      your browser</a> to improve your experience.</p>
-      <![endif]-->
-      <div ng-href="#/" id="top_logo">
-        <div id="brand_top">Tukiyhdistys</div>
-        <a class="brand" ng-href="#/">Karvinen Ry.</a> 
-        <div class="address-bar">Malmin raitti 19, 00700 HELSINKI</div>
-      </div>
-      <!-- Navigation -->
-      <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-            <a class="navbar-brand" href="index.html">Tukiyhdistys Karvinen Ry.</a>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="HeaderCtrl">
-            <ul class="nav navbar-nav">
-            <li ng-class="{ active: isActive('/')}"><a ng-href="#/">Koti &#9660;</a> 
+    <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      </head>
+      <body ng-app="karvinenApp">
+        <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <!-- Navigation -->
+        <nav class="navbar navbar-default" role="navigation">
+          
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              </button>
+              <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+              <a class="navbar-brand" href="index.html">Tukiyhdistys Karvinen Ry.</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="HeaderCtrl">
+              
+              <div ng-href="#/" id="top_logo">
+                <div class="col-sm-4"></div>
+                <!-- <div id="brand_top">Tukiyhdistys</div> -->
+                <!-- <a class="brand" ng-href="#/">Karvinen Ry.</a>  -->
+                <div class="col-sm-4">
+                  <div id="logo_image">
+                    <img src="images/logo_with_text_3.png" />
+                  </div>
+                </div>
+                <!-- <div class="address_bar">Malmin raitti 19, 00700 HELSINKI</div> -->
+              </div>
+              <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/')}"><a ng-href="#/">Koti &#9660;</a>
+                <ul>
+                  <li><a ng-href="#/organisaatiokaavio">Organisaatiokaavio</a></li>
+                  <li><a ng-href="#/hallinto">Hallinto ja työntekijät</a></li>
+                  <li><a ng-href="#/missio">Missio, visio, arvot ja motto</a></li>
+                  <li><a ng-href="#/toimintasuunnitelma">Toimintasuunnitelma</a></li>
+                  <li><a ng-href="#/toimintakertomus">Toimintakertomus</a></li>
+                </ul>
+              </li>
+              <li ng-class="{ active: isActive('/yhteystiedot')}"><a ng-href="#/yhteystiedot">Yhteystiedot &#9660;</a>
               <ul>
-                <li><a ng-href="#/organisaatiokaavio">Organisaatiokaavio</a></li>
-                <li><a ng-href="#/hallinto">Hallinto ja työntekijät</a></li>
-                <li><a ng-href="#/missio">Missio, visio, arvot ja motto</a></li>
-                <li><a ng-href="#/toimintasuunnitelma">Toimintasuunnitelma</a></li>
-                <li><a ng-href="#/toimintakertomus">Toimintakertomus</a></li>
+                <li><a ng-href="#/bussiyhteydet">Bussiyhteydet</a></li>
               </ul>
             </li>
-              <li ng-class="{ active: isActive('/yhteystiedot')}"><a ng-href="#/yhteystiedot">Yhteystiedot &#9660;</a>
-                <ul>
-                  <li><a ng-href="#/bussiyhteydet">Bussiyhteydet</a></li>
-                </ul>
-              </li>
-              <li ng-class="{ active: isActive('/ryhmat')}"><a ng-href="#/ryhmat">Ryhmät</a></li>
-              <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Retket</a></li>
-              <li ng-class="{ active: isActive('/jasenyys')}"><a ng-href="#/jasenyys">Jäsenyys &#9660;</a>
-                <ul>
-                  <li ng-class="{ active: isActive('/jaseneksiliittyminen')}"><a ng-href="#/jaseneksiliittyminen">Jäseneksi liittyminen
-                  </a></li>
-                  <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenedut">Jäsenedut</a></li>
-                  <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenkirje">Jäsenkirje</a></li>
-                  <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenkysely">Jäsenkysely</a></li>
-                </ul>
-              </li>
-              <li ng-class="{ active: isActive('/nuoret')}"><a ng-href="#/nuoret">Nuoret</a></li>
-              
-                <li ng-class="{ active: isActive('/ruokalista')}"><a ng-href="#/ruokalista">Ruokalista</a></li>
-                <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Kuvagalleria</a></li>
-                <li ng-class="{ active: isActive('/linkit')}"><a ng-href="#/linkit">Linkit</a></li>
-              
+            <li ng-class="{ active: isActive('/ryhmat')}"><a ng-href="#/ryhmat">Ryhmät</a></li>
+            <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Retket</a></li>
+            <li ng-class="{ active: isActive('/jasenyys')}"><a ng-href="#/jasenyys">Jäsenyys &#9660;</a>
+            <ul>
+              <li ng-class="{ active: isActive('/jaseneksiliittyminen')}"><a ng-href="#/jaseneksiliittyminen">Jäseneksi liittyminen
+              </a></li>
+              <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenedut">Jäsenedut</a></li>
+              <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenkirje">Jäsenkirje</a></li>
+              <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenkysely">Jäsenkysely</a></li>
             </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-      </nav>
-      <!-- Add your site or application content here -->
-      <div class="container">    
-        <div ng-view=""></div>
-        <div class="footer">
-          <p><span class="glyphicon glyphicon-home">
-          </span> Karvinen Ry | Malmin raitti 19, 00700 HELSINKI
-          <br><span class="glyphicon glyphicon-envelope"> </span>
-          <a href="mailto:tukiyhdistys@kolumbus.fi">tukiyhdistys@kolumbus.fi</a>
-          | <a href="https://www.facebook.com/tukiyhdistys.ry?ref=ts&fref=ts" target="newtab"><img src="../images/fb.jpg" alt=""></a>
-      
-          <a class="reittiopas" target="_blank" href="http://www.reittiopas.fi/?showsearchformsaved=hide&from_in=&from=&via_in=&via=&via_time=0&to_in=Malmin+raitti+19+A&to=&hour=18&minute=21&timetype=departure&date_cb=on&day=14&month=1&year=2014&cmargin=3&wspeed=70&method=1&stz=0&mc1=0&mc2=0&mc3=0&mc4=0&mc5=0&mc6=0&mc0=1&nroutes=3&gotoHash=#"><img src="../images/reittiopas.png" alt=""></a>
-            </p>
-        </div>
+          </li>
+          <li ng-class="{ active: isActive('/nuoret')}"><a ng-href="#/nuoret">Nuoret</a></li>
+          
+          <li ng-class="{ active: isActive('/ruokalista')}"><a ng-href="#/ruokalista">Ruokalista</a></li>
+          <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Kuvagalleria</a></li>
+          <li ng-class="{ active: isActive('/linkit')}"><a ng-href="#/linkit">Linkit</a></li>
+          
+        </ul>
       </div>
-      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-      <script>
-      (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-      ga('create', 'UA-XXXXX-X');
-      ga('send', 'pageview');
-      </script>
-      <!-- build:js(.) scripts/oldieshim.js -->
-      <!--[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.js"></script>
-      <![endif]-->
-      <!-- endbuild -->
-      <!-- build:js(.) scripts/vendor.js -->
-      <!-- bower:js -->
-      <script src="bower_components/jquery/dist/jquery.js"></script>
-      <script src="bower_components/angular/angular.js"></script>
-      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-      <script src="bower_components/angular-animate/angular-animate.js"></script>
-      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-      <script src="bower_components/angular-resource/angular-resource.js"></script>
-      <script src="bower_components/angular-route/angular-route.js"></script>
-      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-      <script src="bower_components/angular-touch/angular-touch.js"></script>
-      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-      <!-- endbower -->
-      <!-- endbuild -->
-      <!-- build:js({.tmp,app}) scripts/scripts.js -->
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div ng-view=""></div>
+    <div class="footer">
+      <p><span class="glyphicon glyphicon-home">
+      </span> Karvinen Ry | Malmin raitti 19, 00700 HELSINKI
+      <br><span class="glyphicon glyphicon-envelope"> </span>
+      <a href="mailto:tukiyhdistys@kolumbus.fi">tukiyhdistys@kolumbus.fi</a>
+      | <a href="https://www.facebook.com/tukiyhdistys.ry?ref=ts&fref=ts" target="newtab"><img src="../images/fb.jpg" alt=""></a>
       
-      <script src="scripts/app.js"></script>      
-      <script src="scripts/controllers/main.js"></script>
-      <script src="scripts/controllers/header.js"></script>
-      <script src="scripts/controllers/kuvagalleria.js"></script>
-      <script src="scripts/controllers/hallitus.js"></script>
-      <script src="scripts/controllers/ryhmat.js"></script>
-      <script src="scripts/controllers/ruokalista.js"></script>
-      <script src="scripts/services/galleriasvc.js"></script>
-      <script src="scripts/controllers/vieraskirja.js"></script>
-      <script src="scripts/services/vieraskirjasvc.js"></script>
-      <script src="scripts/controllers/organisaatiokaavio.js"></script>
-      <script src="scripts/controllers/hallinto.js"></script>
-      <script src="scripts/controllers/missio.js"></script>
-      <script src="scripts/controllers/toimintasuunnitelma.js"></script>
-      <script src="scripts/controllers/toimintakertomus.js"></script>
-      <script src="scripts/controllers/bussiyhteydet.js"></script>
-      <script src="scripts/controllers/jasenyys.js"></script>
-      <script src="scripts/controllers/jaseneksiliittyminen.js"></script>
-      <script src="scripts/controllers/jasenedut.js"></script>
-      <script src="scripts/controllers/jasenkysely.js"></script>
-      <script src="scripts/controllers/jasenkirje.js"></script>
-      <script src="scripts/controllers/nuoret.js"></script>
-      <script src="scripts/controllers/linkit.js"></script>
-      <!-- endbuild -->
-      
-    </body>
-  </html>
+      <a class="reittiopas" target="_blank" href="http://www.reittiopas.fi/?showsearchformsaved=hide&from_in=&from=&via_in=&via=&via_time=0&to_in=Malmin+raitti+19+A&to=&hour=18&minute=21&timetype=departure&date_cb=on&day=14&month=1&year=2014&cmargin=3&wspeed=70&method=1&stz=0&mc1=0&mc2=0&mc3=0&mc4=0&mc5=0&mc6=0&mc0=1&nroutes=3&gotoHash=#"><img src="../images/reittiopas.png" alt=""></a>
+      </p>
+    </div>
+  </div>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+  (function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function () {
+  (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+  </script>
+  <!-- build:js(.) scripts/oldieshim.js -->
+  <!--[if lt IE 9]>
+  <script src="bower_components/es5-shim/es5-shim.js"></script>
+  <script src="bower_components/json3/lib/json3.js"></script>
+  <![endif]-->
+  <!-- endbuild -->
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/header.js"></script>
+  <script src="scripts/controllers/kuvagalleria.js"></script>
+  <script src="scripts/controllers/hallitus.js"></script>
+  <script src="scripts/controllers/ryhmat.js"></script>
+  <script src="scripts/controllers/ruokalista.js"></script>
+  <script src="scripts/services/galleriasvc.js"></script>
+  <script src="scripts/controllers/vieraskirja.js"></script>
+  <script src="scripts/services/vieraskirjasvc.js"></script>
+  <script src="scripts/controllers/organisaatiokaavio.js"></script>
+  <script src="scripts/controllers/hallinto.js"></script>
+  <script src="scripts/controllers/missio.js"></script>
+  <script src="scripts/controllers/toimintasuunnitelma.js"></script>
+  <script src="scripts/controllers/toimintakertomus.js"></script>
+  <script src="scripts/controllers/bussiyhteydet.js"></script>
+  <script src="scripts/controllers/jasenyys.js"></script>
+  <script src="scripts/controllers/jaseneksiliittyminen.js"></script>
+  <script src="scripts/controllers/jasenedut.js"></script>
+  <script src="scripts/controllers/jasenkysely.js"></script>
+  <script src="scripts/controllers/jasenkirje.js"></script>
+  <script src="scripts/controllers/nuoret.js"></script>
+  <script src="scripts/controllers/linkit.js"></script>
+  <!-- endbuild -->
+  
+</body>
+</html>
