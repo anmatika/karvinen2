@@ -12,12 +12,19 @@ $font_3: Arial;
 $font_4: sans-serif;
 $font_5: Roboto;
 $font_6: Open Sans;
+$font_7: Hammersmith One;
 
 body {  
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 13px;
-  background-color: #E4EBF5 !important;
+  font-family: $font_7, $font_6, $font_1, $font_2, $font_3, $font_4;
+  // background: url('/images/bg-11-full.jpg') no-repeat center center fixed;
+  background-color: #E4EBF5; 
+  background-color: #598BB1;
+  background-color: #80C8FE;
+  background-color: #DFF1FE;
+  background-size: cover;
 }
 .header {
   padding-left: 15px;
@@ -39,11 +46,14 @@ body {
   }
 }
 .footer {
+  margin-top: 50px;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 19px;
   color: $color_tapa_approx;
-  border-top: 1px solid $mercury;
+  color: #000;
+  // border-top: 2px solid $mercury;
+  border-top: 2px solid #000;
 }
 @media (min-width: 768px) {
   .container {
@@ -99,7 +109,15 @@ body {
   // background: url('../images/nice_snow.png') repeat center center fixed;
    background-color: white !important;
     border: 2px solid;
-    border-radius: 25px;
+    border-radius: 10px;
+
+    background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#a0d8ef)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
 }
 .container-narrow > hr {
   margin: 30px 0;
@@ -118,27 +136,6 @@ strong {
 }
 
 ul li {
-    
-      font-size: 1em;
-  }
-
-.navbar {
-    border: 2px solid !important; 
-    border-radius: 5px !important;
-    padding-top: 10px !important; 
+  font-size: 1em;
 }
 
-#top_logo {
-  position: relative;
-  height: 130px;
-  background-color: white;
-    
-  #logo_image {
-    img {
-      // center image
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }  
-}

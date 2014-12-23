@@ -18,7 +18,10 @@ nav {
       }
     }
     li:hover{
-      background-color: #e7e7e7;
+      background-color: #F1FBFE;
+      font-size: 1.1em;
+      box-shadow: 7px 7px 5px $color_suva_gray_approx;
+      border-radius: 5px;
     }
     // submenu
     ul {
@@ -32,6 +35,8 @@ nav {
         border: 2px;
         z-index: 9999; //menu should be always top of the stack
         box-shadow: 7px 7px 5px $color_suva_gray_approx;
+        border-radius: 5px;
+
       li {
         list-style: none;
         padding-top: 5px !important;
@@ -46,10 +51,39 @@ nav {
       }
       li:hover{
         display: inline-block; // makes item size fit the contents
-        background-color: #e7e7e7;
-        
+        background-color: #BFCFFE;
+        background-color: #9BA9AE;
+        font-size: 1.1em;
+        border-radius: 0px;
       }
     }    
   }
   
+}
+
+.navbar {
+    padding-top: 10px !important; 
+}
+
+#top_logo {
+  position: relative;
+  height: 130px;
+    
+  #logo_image {
+    a {
+      outline: 0;
+    }    
+    img {
+      // center image
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }  
+}
+
+// active menu color
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #F1FBFE;
+    color: #000;
 }
