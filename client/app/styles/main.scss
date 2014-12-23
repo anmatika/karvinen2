@@ -53,7 +53,7 @@ body {
   color: $color_tapa_approx;
   color: #000;
   // border-top: 2px solid $mercury;
-  border-top: 2px solid #000;
+  border-top: 1px solid #000;
 }
 @media (min-width: 768px) {
   .container {
@@ -103,14 +103,15 @@ body {
 // }
 .box {
   //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-  box-shadow: 7px 7px 5px $color_suva_gray_approx;
-  font-family: $font_5, $font_6, $font_1, $font_2, $font_3, $font_4;
-  // background: url('../images/contemporary_china.png');
-  // background: url('../images/nice_snow.png') repeat center center fixed;
-   background-color: white !important;
-    border: 2px solid;
-    border-radius: 5px;
-    border-color: grey;
+    box-shadow: 2px 2px 2px $color_suva_gray_approx;
+    font-family: $font_5, $font_6, $font_1, $font_2, $font_3, $font_4;
+    background-color: white !important;
+    -webkit-border-radius: 25px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius: 25px;
+    -moz-border-radius-bottomright: 5px;
+    border-radius: 25px;
+    border-bottom-right-radius: 5px;
 
     background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#a0d8ef)); /* Chrome,Safari4+ */
@@ -119,6 +120,9 @@ body {
     background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* IE10+ */
     background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
+    position: relative;
+
+    
 }
 .container-narrow > hr {
   margin: 30px 0;

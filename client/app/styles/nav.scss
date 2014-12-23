@@ -21,6 +21,8 @@ nav {
       background-color: #F1FBFE;
       font-size: 1.1em;
       box-shadow: 7px 7px 5px $color_suva_gray_approx;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
       border-radius: 5px;
     }
     // submenu
@@ -35,6 +37,8 @@ nav {
         border: 2px;
         z-index: 9999; //menu should be always top of the stack
         box-shadow: 7px 7px 5px $color_suva_gray_approx;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
         border-radius: 5px;
 
       li {
@@ -54,6 +58,8 @@ nav {
         background-color: #BFCFFE;
         background-color: #9BA9AE;
         font-size: 1.1em;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
         border-radius: 0px;
       }
     }    
@@ -63,6 +69,7 @@ nav {
 
 .navbar {
     padding-top: 5px !important; 
+    margin-bottom: 30px !important;
 }
 
 #top_logo {
