@@ -419,19 +419,7 @@ module.exports = function (grunt) {
         //singleRun: true
         autoWatch: true
       }
-    },
-    'string-replace': {
-      dist: {
-        files: { '<%=yeoman.app %>/views': '<%=yeoman.dist %>/views' },
-        options: {
-          replacements: [{
-            pattern: '../app/images',
-            replacement: '../images'
-          }]
-        }
-      }
     }
-
   });
 
 
