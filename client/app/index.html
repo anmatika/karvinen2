@@ -60,7 +60,13 @@
                 <!-- <div class="address_bar">Malmin raitti 19, 00700 HELSINKI</div> -->
               </div>
               <ul class="nav navbar-nav">
-                <li ng-class="{ active: isActive('/')}"><a ng-href="#/">Karvinen &#9660;</a>
+                <li ng-class="{ active: isActive('/')
+                || isActive('/organisaatiokaavio')
+                || isActive('/hallinto')
+                || isActive('/missio')
+                || isActive('/toimintasuunnitelma')
+                || isActive('/toimintakertomus')}">
+                <a ng-href="#/">Karvinen &#9660;</a>
                 <ul>
                   <li><a ng-href="#/organisaatiokaavio">Organisaatiokaavio</a></li>
                   <li><a ng-href="#/hallinto">Hallinto ja työntekijät</a></li>
@@ -69,20 +75,25 @@
                   <li><a ng-href="#/toimintakertomus">Toimintakertomus</a></li>
                 </ul>
               </li>
-              <li ng-class="{ active: isActive('/yhteystiedot')}"><a ng-href="#/yhteystiedot">Yhteystiedot &#9660;</a>
+              <li ng-class="{ active: isActive('/yhteystiedot') || isActive('/bussiyhteydet') }"><a ng-href="#/yhteystiedot">Yhteystiedot &#9660;</a>
               <ul>
                 <li><a ng-href="#/bussiyhteydet">Bussiyhteydet</a></li>
               </ul>
             </li>
             <li ng-class="{ active: isActive('/ryhmat')}"><a ng-href="#/ryhmat">Ryhmät</a></li>
             <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Retket</a></li>
-            <li ng-class="{ active: isActive('/jasenyys')}"><a ng-href="#/jasenyys">Jäsenyys &#9660;</a>
+            <li ng-class="{ active: isActive('/jasenyys') 
+            || isActive('/jaseneksiliittyminen')
+            || isActive('/jasenedut')
+            || isActive('/jasenkirje')
+            || isActive('/jasenkysely')}">
+            <a ng-href="#/jasenyys">Jäsenyys &#9660;</a>
             <ul class="arrow_box">
-              <li ng-class="{ active: isActive('/jaseneksiliittyminen')}"><a ng-href="#/jaseneksiliittyminen">Jäseneksi liittyminen
+              <li><a ng-href="#/jaseneksiliittyminen">Jäseneksi liittyminen
               </a></li>
-              <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenedut">Jäsenedut</a></li>
-              <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenkirje">Jäsenkirje</a></li>
-              <li ng-class="{ active: isActive('/jasenedut')}"><a ng-href="#/jasenkysely">Jäsenkysely</a></li>
+              <li><a ng-href="#/jasenedut">Jäsenedut</a></li>
+              <li><a ng-href="#/jasenkirje">Jäsenkirje</a></li>
+              <li><a ng-href="#/jasenkysely">Jäsenkysely</a></li>
             </ul>
           </li>
           <li ng-class="{ active: isActive('/nuoret')}"><a ng-href="#/nuoret">Nuoret</a></li>
