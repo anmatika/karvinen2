@@ -1,0 +1,21 @@
+#linkit{
+	ul
+	{
+		li {
+			display: block;
+			padding: 10px;
+			a {
+				text-decoration: none !important;
+				outline: 0;
+			}
+		}
+		li:hover {
+			border: 2px;
+	        box-shadow: 5px 5px 5px grey;
+	        border-radius: 5px;
+			font-size: 1.1em;
+			color: black;
+		}
+
+	}
+}
