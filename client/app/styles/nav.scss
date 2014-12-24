@@ -1,5 +1,5 @@
 $color_suva_gray_approx: #888888;
-
+$active_menu_color: #BDDEB4;
 nav {  
   // main menu
   ul {
@@ -11,24 +11,30 @@ nav {
     li{
       font-size: 0.9em;
       a {
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-        padding-left: 10px !important;
-        padding-rigth: 10px !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
       }
     }
     li:hover{      
-      background-color: #DFF1FE;
+      background-color: $active_menu_color;
       font-size: 1.1em;
       box-shadow: 7px 7px 5px $color_suva_gray_approx;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
+       a {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
     }
     // submenu
     ul {
         position: absolute;
-        top: 31px;
+        top: 30px;
         width: auto;
         display: none;
         margin: 0;
@@ -37,9 +43,9 @@ nav {
         border: 2px;
         z-index: 9999; //menu should be always top of the stack
         box-shadow: 7px 7px 5px $color_suva_gray_approx;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
 
       li {
         list-style: none;
@@ -51,15 +57,19 @@ nav {
           padding: 10px !important;
           text-decoration: none !important;
           white-space: nowrap;
+          outline: 0;
         }
       }
       li:hover{
         display: inline-block; // makes item size fit the contents
-        background-color: #DFF1FE;
+        background-color: $active_menu_color;
         font-size: 1.1em;
         -webkit-border-radius: 0px;
         -moz-border-radius: 0px;
         border-radius: 0px;
+        a {
+          outline: 0;
+        }
       }
     }    
   }
@@ -74,11 +84,21 @@ nav {
   position: relative;
   height: 130px;
     
+
   #logo_image {
+  // background-color:#EE5D20;
     a {
       outline: 0;
     }    
     img {
+      border-radius:20px / 260px;
+      -webkit-border-radius: 20px / 260px;
+      -moz-border-radius: 20px / 260px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 5px;
+      box-shadow: 2px 2px 2px grey;
+
       // center image
       display: block;
       margin-left: auto;
@@ -87,13 +107,48 @@ nav {
   }  
 }
 
+.navbar-default .navbar-nav li > a {
+  // color: green;
+}
+
+
+
+@media (min-width: 768px) {
+  .navbar {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-bottom-right-radius: 5px;
+
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .navbar-default {
+      border: none;
+      background: white;
+      box-shadow: 20px 20px 20px grey;
+      // height: 50px !important;
+  }
+}
+
 // active menu color
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    background-color: #DFF1FE;
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: $active_menu_color;
     color: #000;
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topright: 5px;
-    border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-right-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
     outline: 0;
+    font-weight: bold;
 
 }
