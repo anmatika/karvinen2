@@ -93,6 +93,18 @@ body {
   }
 }
 
+#header_pic {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#header_pic2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .box {
   //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
      box-shadow: 2px 2px 2px $color_suva_gray_approx;

@@ -131,7 +131,7 @@ nav {
   .navbar-default {
       border: none;
       background: white;
-      box-shadow: 20px 20px 20px grey;
+      box-shadow: 5px 5px 5px grey;
       // height: 50px !important;
   }
 }
@@ -150,5 +150,6 @@ nav {
     border-top-left-radius: 10px;
     outline: 0;
     font-weight: bold;
-
+    box-shadow: 2px 2px 2px grey;
+    
 }
