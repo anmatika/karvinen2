@@ -49,11 +49,7 @@ h5 {
 h6 {
 	@extend %extend_1;
 }
-p {
-	font-size: 0.9em;
-	line-height: 1.6;
-	color: $black;
-}
+
 hr {
 	max-width: 400px;
 	border-color: $color_mountain_mist_approx;

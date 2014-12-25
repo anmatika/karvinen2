@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Karvinen Ry.</title>
-    <meta name="description" content="">
+    <meta name="description" content="Yhdistyksen tarkoitus on parantaa mielenterveyskuntoutujien ja heidän läheistensä elämänlaatua.">
     <meta name="author" content="4ntti.matikainen@gmail.com">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -13,7 +13,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/business-casual.css"/>
+    <!-- <link rel="stylesheet" href="styles/business-casual.css"/> -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/ryhmat.css"/>
@@ -34,30 +34,26 @@
         <nav class="navbar navbar-default" role="navigation">
           
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-1">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               </button>
               <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-              <a class="navbar-brand" href="index.html">Tukiyhdistys Karvinen Ry.</a>
+              <a class="navbar-brand" ng-href="#/">Tukiyhdistys Karvinen Ry.</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="HeaderCtrl">
+            <div class="collapse navbar-collapse" id="collapse-1" ng-controller="HeaderCtrl">
               
               <div id="top_logo">
                 <div class="col-sm-4"></div>
-                <!-- <div id="brand_top">Tukiyhdistys</div> -->
-                <!-- <a class="brand" ng-href="#/">Karvinen Ry.</a>  -->
                 <div class="col-sm-4">
                   <div id="logo_image">
                     <a ng-href="#/"><img src="images/logo_with_text_5.png" /></a>
                   </div>
                 </div>
-                <!-- <div class="address_bar">Malmin raitti 19, 00700 HELSINKI</div> -->
               </div>
               <div id="header_pic"><img src="images/leaf.png" /></div>
               <div id="header_pic2"><img src="images/leaf2.png" /></div>
@@ -114,13 +110,6 @@
   <div class="container">
     <div ng-view=""></div>
     <div class="footer">
-      <!-- <div class="row">
-        <div class="col-sm-12">
-          Yhdistyksen toimintaa tukevat RAY ja Helsingin kaupunki
-          <img src="images/ray.gif" />
-          <img src="images/helsinki_vaakuna2.png" />
-        </div>
-      </div> -->
       <div class="row">
         <div class="col-sm-6">
           <p><span class="glyphicon glyphicon-home">
@@ -156,6 +145,7 @@
   ga('create', 'UA-XXXXX-X');
   ga('send', 'pageview');
   </script>
+
   <!-- build:js(.) scripts/oldieshim.js -->
   <!--[if lt IE 9]>
   <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -203,5 +193,11 @@
   <script src="scripts/controllers/linkit.js"></script>
   <!-- endbuild -->
   
+  <!-- hides mobile menu when clicked  -->
+  <script>$('.navbar-collapse li a').click(function(){
+     $('.collapse.in').removeClass('in').css('height', '0');
+     window.scrollTo(0, 0);
+  });</script>
+
 </body>
 </html>

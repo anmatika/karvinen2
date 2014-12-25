@@ -1,5 +1,7 @@
 $color_suva_gray_approx: #888888;
 $active_menu_color: #BDDEB4;
+$menu_text_color: #2C2D2B;
+
 nav {  
   // main menu
   ul {
@@ -20,13 +22,20 @@ nav {
     li:hover{      
       background-color: $active_menu_color;
       font-size: 1.1em;
+      
       box-shadow: 7px 7px 5px $color_suva_gray_approx;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-       a {
+      -webkit-box-shadow: 7px 7px 5px $color_suva_gray_approx;
+      -moz-box-shadow: 7px 7px 5px $color_suva_gray_approx;
+      
+      -webkit-border-top-right-radius: 10px;
+      -moz-border-radius-topright: 10px;
+      border-top-right-radius: 10px;
+      -webkit-border-top-left-radius: 10px;
+      -moz-border-radius-topleft: 10px;
+      border-top-left-radius: 10px;
+      a {
         padding-top: 5px !important;
-        padding-bottom: 5px !important;
+        padding-bottom: 8px !important;
         padding-left: 15px !important;
         padding-right: 15px !important;
       }
@@ -34,7 +43,7 @@ nav {
     // submenu
     ul {
         position: absolute;
-        top: 30px;
+        top: 31px;
         width: auto;
         display: none;
         margin: 0;
@@ -42,7 +51,11 @@ nav {
         padding-top: 5px;
         border: 2px;
         z-index: 9999; //menu should be always top of the stack
+        
         box-shadow: 7px 7px 5px $color_suva_gray_approx;
+        -webkit-box-shadow: 7px 7px 5px $color_suva_gray_approx;
+        -moz-box-shadow: 7px 7px 5px $color_suva_gray_approx;
+        
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
@@ -58,6 +71,7 @@ nav {
           text-decoration: none !important;
           white-space: nowrap;
           outline: 0;
+          color: $menu_text_color
         }
       }
       li:hover{
@@ -69,6 +83,7 @@ nav {
         border-radius: 0px;
         a {
           outline: 0;
+          color: #000;
         }
       }
     }    
@@ -83,10 +98,8 @@ nav {
 #top_logo {
   position: relative;
   height: 130px;
-    
 
   #logo_image {
-  // background-color:#EE5D20;
     a {
       outline: 0;
     }    
@@ -98,7 +111,8 @@ nav {
       padding-right: 20px;
       padding-bottom: 5px;
       box-shadow: 2px 2px 2px grey;
-
+      -webkit-box-shadow: 2px 2px 2px grey;
+      -moz-box-shadow: 2px 2px 2px grey;
       // center image
       display: block;
       margin-left: auto;
@@ -106,12 +120,6 @@ nav {
     }
   }  
 }
-
-.navbar-default .navbar-nav li > a {
-  // color: green;
-}
-
-
 
 @media (min-width: 768px) {
   .navbar {
@@ -132,8 +140,15 @@ nav {
       border: none;
       background: white;
       box-shadow: 5px 5px 5px grey;
-      // height: 50px !important;
+      -webkit-box-shadow: 5px 5px 5px grey;
+      -moz-box-shadow: 5px 5px 5px grey;
+
   }
+}
+
+// menu text color
+.navbar-default .navbar-nav > li > a {
+    color: $menu_text_color;
 }
 
 // active menu color
@@ -142,14 +157,17 @@ nav {
 .navbar-default .navbar-nav > .active > a:focus {
     background-color: $active_menu_color;
     color: #000;
+
     -webkit-border-top-right-radius: 10px;
     -moz-border-radius-topright: 10px;
     border-top-right-radius: 10px;
     -webkit-border-top-left-radius: 10px;
     -moz-border-radius-topleft: 10px;
     border-top-left-radius: 10px;
+
     outline: 0;
     font-weight: bold;
     box-shadow: 2px 2px 2px grey;
-    
+    -webkit-box-shadow: 2px 2px 2px grey;
+    -moz-box-shadow: 2px 2px 2px grey;    
 }

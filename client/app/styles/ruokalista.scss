@@ -2,12 +2,14 @@
 	.today {
 		border: solid;
 		border-width: 5px;
-	    border-color: #9BA9AE;
+	    border-color: #6fc44f;
 		padding: 20px;
-		//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
-		border-radius: 50px;
-		//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-		box-shadow: #B3B3B3 28px 28px 28px;
+		-webkit-border-radius: 20px;
+	 	-moz-border-radius: 20px;
+	 	border-radius: 20px;
+	 	-webkit-box-shadow: #B3B3B3 10px 10px 10px;
+	 	-moz-box-shadow: #B3B3B3 10px 10px 10px; 
+	 	box-shadow: #B3B3B3 10px 10px 10px;
 	}
 	.day {
 		margin-bottom: 10px;

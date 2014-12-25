@@ -3,6 +3,15 @@ $mercury: #e5e5e5;
 $color_tapa_approx: #777;
 $black_80: rgba(0, 0, 0, 0.8);
 $color_suva_gray_approx: #888888;
+$color_apple_approx: rgba(53, 170, 36, 1);
+$black_50: rgba(0,0,0,0.5);
+$color_mortar_approx: #545;
+$white: #fff;
+$black: #000;
+$color_mountain_mist_approx: #999999;
+$color_sea_mist_90_approx: rgba(190, 233, 203, 0.9);
+// $color_sea_mist_90_approx: rgba(242, 249, 244, 0.9);
+$white_90: rgba(255,255,255,0.9);
 
 //fonts
 $font_0: Josefin Slab;
@@ -65,32 +74,30 @@ body {
   }
 }
 
-
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid $mercury;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+.intro-text {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
-@media screen and (min-width: 768px) {
-  .header {
-    padding-left: 0;
-    padding-right: 0;
-    margin-bottom: 30px;
-  }
-  .marketing {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .jumbotron {
-    border-bottom: 0;
-  }
+
+.box:before{
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  content: url('/images/leaf4.png');
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+strong {
+  font-size: 1.1em;
+}
+
+ul li {
+  font-size: 1em;
 }
 
 #header_pic {
@@ -106,52 +113,88 @@ body {
 }
 
 .box {
-  //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-     box-shadow: 2px 2px 2px $color_suva_gray_approx;
+    box-shadow: 2px 2px 2px $color_suva_gray_approx;
+    -webkit-box-shadow: 2px 2px 2px $color_suva_gray_approx;
+    -moz-box-shadow: 2px 2px 2px $color_suva_gray_approx;
+
     font-family: $font_5, $font_6, $font_1, $font_2, $font_3, $font_4;
+    
     -webkit-border-radius: 5px;
     -webkit-border-bottom-right-radius: 5px;
     -moz-border-radius: 5px;
     -moz-border-radius-bottomright: 5px;
     border-radius: 5px;
     border-bottom-right-radius: 5px;
+    
     background-color: #fff;
     margin-bottom: 20px;
     padding: 30px 15px;
-    // background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
-    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#a0d8ef)); /* Chrome,Safari4+ */
-    // background: -webkit-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Chrome10+,Safari5.1+ */
-    // background: -o-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Opera 11.10+ */
-    // background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* IE10+ */
-    // background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C */
-    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
     position: relative;
-
-    
-}
-.container-narrow > hr {
-  margin: 30px 0;
 }
 
-strong {
-  font-size: 0.9em;
+p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: black;
 }
 
-.brand_logo {
+// brand name in mobile mode
+.navbar-default .navbar-brand {
+    color: #45621e;
+    text-shadow: 1px 1px grey;
+}
 
-  // float: left;
-  img {
-    opacity: 0.8;
+@media screen and (min-width:1200px) {
+  .box:after {
+    content: '';
+    display: table;
+    clear: both;
   }
 }
 
-ul li {
-  font-size: 1em;
-}
 
-#karvinen_book_img{
-  border: 5px solid;
-  border-color: #9BA9AE;
-  border-radius: 2px;
-  box-shadow: 2px 2px 2px $color_suva_gray_approx;
+@media screen and (min-width:768px) {
+  
+  .top-divider {
+    margin-top: 0;
+  }
+  .img-left {
+    float: left;
+    margin-right: 25px;
+  }
+  
+  .navbar-header {
+      display: none;
+  }
+  
+  .nav>li>a {
+    padding: 20px;
+  }
+  .navbar-nav>li>a {
+    line-height: normal;
+  }
+  .navbar-nav {
+    display: table;
+    float: none;
+    margin: 0 auto;
+    table-layout: fixed;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+  }
+
+   .header {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
