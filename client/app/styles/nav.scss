@@ -4,14 +4,17 @@ $menu_text_color: #2C2D2B;
 
 nav {  
   // main menu
+
   ul {
     position: relative;
     li:hover > ul{
       display: block;
       background: #FFF;
+      height: auto;
     }
     li{
       font-size: 0.9em;
+     
       a {
         padding-top: 8px !important;
         padding-bottom: 8px !important;
@@ -42,10 +45,12 @@ nav {
     }
     // submenu
     ul {
+        
         position: absolute;
         top: 31px;
         width: auto;
         display: none;
+        height: 0;
         margin: 0;
         padding: 10px;
         padding-top: 5px;
@@ -61,10 +66,12 @@ nav {
         border-radius: 10px;
 
       li {
+
+        
         list-style: none;
         padding-top: 5px !important;
         padding-bottom: 5px !important;
-        -webkit-transiton: opacity 1s;
+        
         a {
           font-size: 0.9em;
           padding: 10px !important;

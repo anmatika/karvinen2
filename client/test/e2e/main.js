@@ -18,7 +18,7 @@ describe('homepage', function() {
   it('logo click routes back to home', function() {
 
 	browser.get('http://localhost:3000/#/ryhmat');
-	var logo = element(by.id('navbar_logo'));
+	var logo = element.all(by.css('#logo_image a')).first();
 	logo.click();
 	expect(browser.getLocationAbsUrl()).toMatch("/");
 

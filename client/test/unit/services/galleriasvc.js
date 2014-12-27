@@ -66,7 +66,7 @@ describe('Service: galleriaSvc', function () {
     resolvedData;
 
     // expect /galleria to be called and mock the response
-    $httpBackend.expectGET('/galleria').respond(responseImages);
+    $httpBackend.expectGET('/routes/galleria').respond(responseImages);
     
     promise.then(function(data){
       resolvedData = data;
