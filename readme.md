@@ -23,9 +23,6 @@ cd /client && grunt unit
 # E2e test
 cd /client && grunt e2e
 
-# Deploy to Nodejitsu
-cd / && jitsu deploy
-
 # Protractor (manual e2e test) 
 cd /server && npm test
 cd client/node_modules/protractor/bin && ./webdriver-manager start
