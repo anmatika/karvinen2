@@ -104,7 +104,7 @@ nav {
 
 #top_logo {
   position: relative;
-  height: 130px;
+  height: 180px;
 
   #logo_image {
     a {
@@ -116,14 +116,15 @@ nav {
       -moz-border-radius: 20px / 260px;
       padding-left: 20px;
       padding-right: 20px;
-      padding-bottom: 5px;
+      padding-bottom: 10px;
+      padding-top: 10px;
       box-shadow: 2px 2px 2px grey;
       -webkit-box-shadow: 2px 2px 2px grey;
       -moz-box-shadow: 2px 2px 2px grey;
       // center image
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
+      
     }
   }  
 }
