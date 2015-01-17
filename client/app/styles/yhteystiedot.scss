@@ -3,3 +3,13 @@
 		display: block;
 	}
 }
+#bussiyhteydet {
+	ul{
+		list-style-type: none;
+		li {
+			background: url(/images/bus.png) no-repeat left top;
+			padding-left: 30px;
+			padding-top: 3px;
+		}
+	}
+}

@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngMap'
   ])
   .config(function ($routeProvider) {
   $routeProvider
@@ -29,7 +30,8 @@ angular
         controller: 'RyhmatCtrl'
       })
       .when('/yhteystiedot', {
-        templateUrl: 'views/yhteystiedot.html'
+        templateUrl: 'views/yhteystiedot.html',
+        controller: 'YhteystiedotCtrl'
       })
       .when('/retket', {
         templateUrl: 'views/retket.html'
