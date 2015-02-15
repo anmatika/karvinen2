@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/vendor.cabc70f2.css">
-    <link rel="stylesheet" href="styles/main.1cff39b6.css">
+    <link rel="stylesheet" href="styles/main.3f312637.css">
     <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
-      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>    
-    
+      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        
       </head>
       <body ng-app="karvinenApp">
         <!--[if lt IE 7]>
@@ -45,110 +45,111 @@
               <!-- <div id="header_pic"><img src="images/leaf.ce13d17c.png" /></div> -->
               <!-- <div id="header_pic2"><img src="images/leaf2.f963b5c2.png" /></div> -->
               <ul class="nav navbar-nav">
-                <li ng-class="{ active: isActive('/')
-                || isActive('/organisaatiokaavio')
-                || isActive('/hallinto')
-                || isActive('/missio')
-                || isActive('/toimintasuunnitelma')
-                || isActive('/toimintakertomus')}">
-                <a ng-href="#/">Karvinen &#9660;</a>
-                <ul>
-                  <li><a ng-href="#/organisaatiokaavio">Organisaatiokaavio</a></li>
-                  <li><a ng-href="#/hallinto">Hallinto ja työntekijät</a></li>
-                  <li><a ng-href="#/missio">Missio, visio, arvot ja motto</a></li>
-                  <li><a ng-href="#/toimintasuunnitelma">Toimintasuunnitelma</a></li>
-                  <li><a ng-href="#/toimintakertomus">Toimintakertomus</a></li>
-                </ul>
-              </li>
-              <li ng-class="{ active: isActive('/yhteystiedot') || isActive('/bussiyhteydet') }"><a ng-href="#/yhteystiedot">Yhteystiedot &#9660;</a>
-              <ul>
-                <li><a ng-href="#/bussiyhteydet">Bussiyhteydet</a></li>
+                <li class="dropdown" ng-class="{ active: isActive('/')
+                  || isActive('/organisaatiokaavio')
+                  || isActive('/hallinto')
+                  || isActive('/missio')
+                  || isActive('/toimintasuunnitelma')
+                  || isActive('/toimintakertomus')}">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Karvinen<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a ng-href="#/">Etusivu</a></li>
+                    <li><a ng-href="#/organisaatiokaavio">Organisaatiokaavio</a></li>
+                    <li><a ng-href="#/hallinto">Hallinto ja työntekijät</a></li>
+                    <li><a ng-href="#/missio">Missio, visio, arvot ja motto</a></li>
+                    <li><a ng-href="#/toimintasuunnitelma">Toimintasuunnitelma</a></li>
+                    <li><a ng-href="#/toimintakertomus">Toimintakertomus</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown" ng-class="{ active: isActive('/yhteystiedot') || isActive('/bussiyhteydet') }">       
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Yhteystiedot<span class="caret"></span></a>           
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a ng-href="#/yhteystiedot">Kartta ja yhteystiedot</a></li>
+                    <li><a ng-href="#/bussiyhteydet">Bussiyhteydet</a></li>
+                  </ul>
+                </li>
+                <li ng-class="{ active: isActive('/ryhmat')}"><a ng-href="#/ryhmat">Ryhmät</a></li>
+                <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Retket</a></li>
+                <li class="dropdown" ng-class="{ active: isActive('/jasenyys')
+                  || isActive('/jaseneksiliittyminen')
+                  || isActive('/jasenedut')
+                  || isActive('/jasenkirje')
+                  || isActive('/jasenkysely')}">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jäsenyys<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a ng-href="#/jaseneksiliittyminen">Jäseneksi liittyminen
+                    </a></li>
+                    <li><a ng-href="#/jasenedut">Jäsenedut</a></li>
+                    <li><a ng-href="#/jasenkirje">Jäsenkirje</a></li>
+                    <li><a ng-href="#/jasenkysely">Jäsenkysely</a></li>
+                  </ul>
+                </li>
+                <li ng-class="{ active: isActive('/nuoret')}"><a ng-href="#/nuoret">Nuoret</a></li>
+                
+                <li ng-class="{ active: isActive('/ruokalista')}"><a ng-href="#/ruokalista">Ruokalista</a></li>
+                <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Galleria</a></li>
+                <li ng-class="{ active: isActive('/linkit')}"><a ng-href="#/linkit">Linkit</a></li>
+                
               </ul>
-            </li>
-            <li ng-class="{ active: isActive('/ryhmat')}"><a ng-href="#/ryhmat">Ryhmät</a></li>
-            <li ng-class="{ active: isActive('/retket')}"><a ng-href="#/retket">Retket</a></li>
-            <li ng-class="{ active: isActive('/jasenyys') 
-            || isActive('/jaseneksiliittyminen')
-            || isActive('/jasenedut')
-            || isActive('/jasenkirje')
-            || isActive('/jasenkysely')}">
-            <a ng-href="#/jasenyys">Jäsenyys &#9660;</a>
-            <ul class="arrow_box">
-              <li><a ng-href="#/jaseneksiliittyminen">Jäseneksi liittyminen
-              </a></li>
-              <li><a ng-href="#/jasenedut">Jäsenedut</a></li>
-              <li><a ng-href="#/jasenkirje">Jäsenkirje</a></li>
-              <li><a ng-href="#/jasenkysely">Jäsenkysely</a></li>
-            </ul>
-          </li>
-          <li ng-class="{ active: isActive('/nuoret')}"><a ng-href="#/nuoret">Nuoret</a></li>
-          
-          <li ng-class="{ active: isActive('/ruokalista')}"><a ng-href="#/ruokalista">Ruokalista</a></li>
-          <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Kuvagalleria</a></li>
-          <li ng-class="{ active: isActive('/linkit')}"><a ng-href="#/linkit">Linkit</a></li>
-          
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-  </nav>
-  <!-- Add your site or application content here -->
-  <div class="container">
-    <div ng-view=""></div>
-    <div class="footer">
-      <div class="row">
-        <div class="col-sm-6">
-          <p><span class="glyphicon glyphicon-home">
-          </span> Karvinen Ry | Malmin raitti 19, 00700 HELSINKI
-          <br>
-          <span class="glyphicon glyphicon-earphone"> </span>
-          <span>050 554 3115</span>
-          <br><span class="glyphicon glyphicon-time"></span><span> ma - pe: 9 - 15 | la: 10 - 15 | su: suljettu </span>
-          <br><span class="glyphicon glyphicon-envelope"> </span>
-          <a href="mailto:tukiyhdistys@kolumbus.fi">tukiyhdistys@kolumbus.fi</a>
-          <br> <a href="https://fi-fi.facebook.com/pages/Tukiyhdistys-Karvinen-ry/204269495468" target="newtab"><img src="../images/fb.7b4bd228.jpg" alt=""></a>
-          <br>
-          <a class="reittiopas" target="_blank" href="http://www.reittiopas.fi/?showsearchformsaved=hide&from_in=&from=&via_in=&via=&via_time=0&to_in=Malmin+raitti+19+A&to=&hour=18&minute=21&timetype=departure&date_cb=on&day=14&month=1&year=2014&cmargin=3&wspeed=70&method=1&stz=0&mc1=0&mc2=0&mc3=0&mc4=0&mc5=0&mc6=0&mc0=1&nroutes=3&gotoHash=#"><img src="../images/reittiopas.421e853c.png" alt=""></a>
-          </p>
+            </div>
+            <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container -->
+        </nav>
+        <!-- Add your site or application content here -->
+        <div class="container">
+          <div ng-view=""></div>
+          <div class="footer">
+            <div class="row">
+              <div class="col-sm-6">
+                <p><span class="glyphicon glyphicon-home">
+                </span> Karvinen Ry | Malmin raitti 19, 00700 HELSINKI
+                <br>
+                <span class="glyphicon glyphicon-earphone"> </span>
+                <span>050 554 3115</span>
+                <br><span class="glyphicon glyphicon-time"></span><span> ma - pe: 9 - 15 | la: 10 - 15 | su: suljettu </span>
+                <br><span class="glyphicon glyphicon-envelope"> </span>
+                <a href="mailto:tukiyhdistys@kolumbus.fi">tukiyhdistys@kolumbus.fi</a>
+                <br> <a href="https://fi-fi.facebook.com/pages/Tukiyhdistys-Karvinen-ry/204269495468" target="newtab"><img src="../images/fb.7b4bd228.jpg" alt=""></a>
+                <br>
+                <a class="reittiopas" target="_blank" href="http://www.reittiopas.fi/?showsearchformsaved=hide&from_in=&from=&via_in=&via=&via_time=0&to_in=Malmin+raitti+19+A&to=&hour=18&minute=21&timetype=departure&date_cb=on&day=14&month=1&year=2014&cmargin=3&wspeed=70&method=1&stz=0&mc1=0&mc2=0&mc3=0&mc4=0&mc5=0&mc6=0&mc0=1&nroutes=3&gotoHash=#"><img src="../images/reittiopas.421e853c.png" alt=""></a>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p>Yhdistyksen toimintaa tukevat RAY ja Helsingin kaupunki</p>
+                <a href="https://www.ray.fi" target="newtab"><img src="/images/ray3.04b02f8b.png" /></a>
+                <a href="http://hel.fi" target="newtab"><img src="/images/helsinki_vaakuna2.ec34b8ec.png" /></a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-6">
-          <p>Yhdistyksen toimintaa tukevat RAY ja Helsingin kaupunki</p>
-          <a href="https://www.ray.fi" target="newtab"><img src="/images/ray3.04b02f8b.png" /></a>
-          <a href="http://hel.fi" target="newtab"><img src="/images/helsinki_vaakuna2.ec34b8ec.png" /></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-  <script>
-  (function (i, s, o, g, r, a, m) {
-  i['GoogleAnalyticsObject'] = r;
-  i[r] = i[r] || function () {
-  (i[r].q = i[r].q || []).push(arguments)
-  }, i[r].l = 1 * new Date();
-  a = s.createElement(o),
-  m = s.getElementsByTagName(o)[0];
-  a.async = 1;
-  a.src = g;
-  m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X');
-  ga('send', 'pageview');
-  </script>
-
-  <!--[if lt IE 9]>
-  <script src="scripts/oldieshim.d48d8270.js"></script>
-  <![endif]-->
-  <script src="scripts/vendor.d928b711.js"></script>
-  
-  <script src="scripts/scripts.15680c63.js"></script>
-  
-  <!-- hides mobile menu when clicked  -->
-  <script>$('.navbar-collapse > li a').click(function(){
-     $('.collapse.in').removeClass('in').css('height', '0');
-     window.scrollTo(0, 0);
-  });</script>
-
-</body>
-</html>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+        <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+        </script>
+        <!--[if lt IE 9]>
+        <script src="scripts/oldieshim.d48d8270.js"></script>
+        <![endif]-->
+        <script src="scripts/vendor.d928b711.js"></script>
+        
+        <script src="scripts/scripts.15680c63.js"></script>
+        
+        <!-- hides mobile menu when clicked  -->
+        <script>$('.navbar-collapse > li a').click(function(){
+        $('.collapse.in').removeClass('in').css('height', '0');
+        window.scrollTo(0, 0);
+        });</script>
+      </body>
+    </html>

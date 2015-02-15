@@ -74,9 +74,10 @@
                     <li><a ng-href="#/toimintakertomus">Toimintakertomus</a></li>
                   </ul>
                 </li>
-                <li class="dropdown" ng-class="{ active: isActive('/yhteystiedot') || isActive('/bussiyhteydet') }">                  
+                <li class="dropdown" ng-class="{ active: isActive('/yhteystiedot') || isActive('/bussiyhteydet') }">       
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Yhteystiedot<span class="caret"></span></a>           
                   <ul class="dropdown-menu" role="menu">
-                    <li><a ng-href="#/yhteystiedot">Yhteystiedot</a></li>
+                    <li><a ng-href="#/yhteystiedot">Kartta ja yhteystiedot</a></li>
                     <li><a ng-href="#/bussiyhteydet">Bussiyhteydet</a></li>
                   </ul>
                 </li>
@@ -99,7 +100,7 @@
                 <li ng-class="{ active: isActive('/nuoret')}"><a ng-href="#/nuoret">Nuoret</a></li>
                 
                 <li ng-class="{ active: isActive('/ruokalista')}"><a ng-href="#/ruokalista">Ruokalista</a></li>
-                <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Kuvagalleria</a></li>
+                <li ng-class="{ active: isActive('/kuvagalleria')}"><a id="kuvagalleria" ng-href="#/kuvagalleria">Galleria</a></li>
                 <li ng-class="{ active: isActive('/linkit')}"><a ng-href="#/linkit">Linkit</a></li>
                 
               </ul>
