@@ -86,7 +86,7 @@ body {
   left: 25px;
   top: 25px;
   content: url('/images/leaf4.png');
-  z-index: 1000; // make pic to be on top of content 
+  z-index: 999; // make pic to be on top of content 
 }
 
 .container-narrow > hr {
