@@ -15,5 +15,8 @@
     "debug": "~2.0.0",
     "jade": "~1.6.0",
     "promised-io": "latest"
+  },
+  "devDependencies": {
+    "mongoose": "^3.8.23"
   }
 }
