@@ -5,6 +5,7 @@
 	 border-width: 5px;
 	 border-color: #6fc44f;
 	 padding: 20px;
+	 margin-left: -20px;
 	 -webkit-border-radius: 20px;
 	 -moz-border-radius: 20px;
 	 border-radius: 20px;
@@ -13,12 +14,20 @@
 	 box-shadow: #B3B3B3 10px 10px 10px;
 	}
 
-	ul li {
-  		list-style: none;
+	.box {
+		padding-left: 40px;
 	}
 
 	.day {
-		margin-bottom: 15px; 
+		margin-bottom: 50px;
+	}
+
+	.day:last-child {
+	    margin-bottom: 0px;
+	}
+
+	ul li {
+  		list-style: none;
 	}
 }
 

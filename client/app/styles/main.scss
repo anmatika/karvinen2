@@ -65,18 +65,17 @@ body {
 }
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 1250px;
+    width:1000px;
   }
+
   .navbar {
     .container {
       max-width: 1250px;
       width: auto;
     }
   }
-
 }
-
-
 
 .intro-text {
   text-transform: uppercase;
@@ -133,8 +132,10 @@ ul li {
     
     background-color: #fff;
     margin-bottom: 20px;
-    padding: 30px 15px;
+    padding: 30px 25px;
     position: relative;
+    
+    
 }
 
 p {

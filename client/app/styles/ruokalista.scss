@@ -4,6 +4,7 @@
 		border-width: 5px;
 	    border-color: #6fc44f;
 		padding: 20px;
+		margin-left: -20px;
 		-webkit-border-radius: 20px;
 	 	-moz-border-radius: 20px;
 	 	border-radius: 20px;
@@ -11,8 +12,16 @@
 	 	-moz-box-shadow: #B3B3B3 10px 10px 10px; 
 	 	box-shadow: #B3B3B3 10px 10px 10px;
 	}
+	.box {
+		padding-left: 40px;
+	}
+
 	.day {
-		margin-bottom: 10px;
+		margin-bottom: 50px;
+	}
+
+	.day:last-child {
+	    margin-bottom: 0px;
 	}
 	li {
 		list-style: none;
