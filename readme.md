@@ -87,8 +87,8 @@ server {
          proxy_pass http://localhost:3000;
         }
 }
-
-
+# Create symbolic link from sites-available to site-enabled
+ln -s /etc/nginx/sites-available/tukiyhdistyskarvinen.fi /etc/nginx/sites-enabled/tukiyhdistyskarvinen.fi
 
 Problems and solutions:
 BadValue Invalid or no user locale set. Please ensure LANG and/or LC_* environment variables are set correctly

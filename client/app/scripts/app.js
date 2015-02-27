@@ -104,6 +104,10 @@ angular
         templateUrl: 'views/linkit.html',
         controller: 'LinkitCtrl'
       })
+      .when('/palaute', {
+        templateUrl: 'views/palaute.html',
+        controller: 'PalauteCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -26,7 +26,7 @@ $font_7: Hammersmith One;
 body {  
   padding-top: 0px;
   padding-bottom: 20px;
-  font-size: 14px;
+  font-size: 18px;
   font-family: $font_5, $font_7, $font_6, $font_1, $font_2, $font_3, $font_4;
   // background: url('/images/bg-11-full.jpg') no-repeat center center fixed;
   background-color: #86A136;
@@ -69,10 +69,14 @@ body {
   }
   .navbar {
     .container {
-      max-width: 1170px;
+      max-width: 1250px;
+      width: auto;
     }
   }
+
 }
+
+
 
 .intro-text {
   text-transform: uppercase;
