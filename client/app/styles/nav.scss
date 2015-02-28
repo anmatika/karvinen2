@@ -8,28 +8,33 @@ nav {
 
 .navbar {
     padding-top: 10px !important; 
-    margin-bottom: 60px !important;
+    margin-bottom: 30px !important;
 }
 
 #top_logo {
   position: relative;
   height: 180px;
+  margin-bottom: 20px;
+
+
 
   #logo_image {
+    
     a {
       outline: 0;
     }    
     img {
-      border-radius:20px / 260px;
-      -webkit-border-radius: 20px / 260px;
-      -moz-border-radius: 20px / 260px;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-bottom: 10px;
-      padding-top: 10px;
-      box-shadow: 2px 2px 2px grey;
-      -webkit-box-shadow: 2px 2px 2px grey;
-      -moz-box-shadow: 2px 2px 2px grey;
+      background-color: white;
+      border-radius:10px / 260px;
+      -webkit-border-radius: 10px / 260px;
+      -moz-border-radius: 10px / 260px;
+      padding-left: 350px;
+      padding-right: 350px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      box-shadow: 10px 10px 10px grey;
+      -webkit-box-shadow: 10px 10px 10px grey;
+      -moz-box-shadow: 10px 10px 10px grey;
       // center image
       display: block;
       margin: 0 auto;
@@ -44,13 +49,17 @@ nav {
     -moz-border-radius: 0px;
     border-radius: 0px;
 
-    -webkit-border-bottom-right-radius: 5px;
-    -moz-border-radius-bottomright: 5px;
-    border-bottom-right-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 
-    -webkit-border-bottom-left-radius: 5px;
-    -moz-border-radius-bottomleft: 5px;
-    border-bottom-left-radius: 5px;
+    // -webkit-border-bottom-right-radius: 5px;
+    // -moz-border-radius-bottomright: 5px;
+    // border-bottom-right-radius: 5px;
+
+    // -webkit-border-bottom-left-radius: 5px;
+    // -moz-border-radius-bottomleft: 5px;
+    // border-bottom-left-radius: 5px;
   }
 
   .navbar-default {
