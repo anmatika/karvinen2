@@ -2,6 +2,20 @@
 	li {
 		display: block;
 	}
+
+	img#sisapihakartta {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#infobox {
+		li {
+			span {				
+				font-size: 1.3em;
+			}
+		}
+	}
 }
 #bussiyhteydet {
 	ul{
