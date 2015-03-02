@@ -35,7 +35,7 @@
         your browser</a> to improve your experience.</p>
         <![endif]-->
         
-      <div id="top_logo">
+      <div id="top_logo" class="hidden-xs">
         <div id="logo_image">
           <a ng-href="#/"><img src="images/karvinenlogo.png" /></a>
         </div>
@@ -56,7 +56,7 @@
               <a class="navbar-brand" ng-href="#/">Tukiyhdistys Karvinen Ry.</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="collapse-1" ng-controller="HeaderCtrl">
+            <div class="collapse navbar-collapse" id="collapse-1" ng-controller="HeaderCtrl" nav-collapse="">
               
               
               <!-- <div id="header_pic"><img src="images/leaf.png" /></div> -->
@@ -182,6 +182,7 @@
         <!--script src="http://maps.google.com/maps/api/js"></script -->
         <script src="scripts/google.maps.api.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="scripts/directives/navCollapse.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/kuvagalleria.js"></script>
