@@ -377,12 +377,20 @@ module.exports = function (grunt) {
             'package.json',
             'images/galleria/**/*.*'
           ]
-        }, {
+        }, 
+        {
           expand: true,
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }, {
+        }, 
+        {
+          expand: true,
+          cwd: '<%= yeoman.app %>/pdf',
+          dest: '<%= yeoman.dist %>/pdf',          
+          src: [ '**' ],
+        }, 
+        {
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',

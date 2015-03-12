@@ -37,7 +37,7 @@ angular.module('karvinenApp')
 	   				for (var i in fileNames){
 	   					var fileName = fileNames[i];
 					 	img = {
-	   					 	"image": "/images/galleria/" + folder + "/" + fileName
+	   					 	"image": "/images/galleria/" + folder + "/" + encodeURI(fileName)
 	   					}
 	   					
 	   					slideItem.images.push(img);
@@ -78,7 +78,57 @@ angular.module('karvinenApp')
    		return deferred.promise;
    }
 
+   function getToimintasuunnitelmat() {
+	   	
+	   	var deferred = $q.defer();
+
+	   	$http.get('/routes/toimintasuunnitelmat')
+	   		.success(function(data){
+	   			// data comes as
+	   			// files: {
+	   			// 	"foldername_1": ["foo.png", "daa.png"],
+	   			// 	"foldername_2": ["abc.png"], "fii.png"]
+	   			// }
+	   			console.log('routes/toimintasuunnitelmat: ' + data);
+	   			var slides = [],
+	   			slideItem = {},
+	   			file;
+	   			// iterate properties(folders) of object "galleria_1", galleria_2...
+	   			for (var folder in data.files){
+	   				var fileNames = data.files[folder];
+	   				
+	   				slideItem = { 
+	   							  header: folder,	   							  
+	   							  files: [] 
+	   							};
+
+	   				// iterate array of fileNames
+	   				for (var i in fileNames){
+	   					var fileName = fileNames[i];
+					 	file = {
+	   					 	"path": "/pdf/toimintasuunnitelmat/" + folder + "/" + encodeURI(fileName),
+	   					 	"name": fileName
+	   					}
+	   					console.log('file: ' + file);
+	   					slideItem.files.push(file);
+	   					   					
+	   				}
+
+	   				slides.push(slideItem);   				
+	   			}
+		   		
+	   			deferred.resolve(slides);		   	
+   		}).
+   		error(function(data){
+   			console.log(data);
+   			deferred.reject(data);
+   		});
+
+   		return deferred.promise;
+   }
+
    return {
-   	getSlides: getSlides
+   		getSlides: getSlides,
+   		getToimintasuunnitelmat: getToimintasuunnitelmat
    }
   });
