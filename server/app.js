@@ -1,4 +1,3 @@
-karvinenGalleriaImagePath = './dist/images/galleria';
 mongoConn = "mongodb://localhost/karvinenry-dev";
 
 var express = require('express');

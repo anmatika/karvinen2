@@ -10,13 +10,13 @@
                     <hr>
                     <hr class="visible-xs">
                     <br>
-                    <div class="row slider" ng-repeat="toimintasuunnitelma in toimintasuunnitelmat" >
+                    <div class="row slider" ng-repeat="toimintasuunnitelma in toimintasuunnitelmat | orderBy:'-header'" >
                         <div class="row">
                             <strong>{{ toimintasuunnitelma.header }}</strong>
                         </div>
                         <div class="row">
                             <div class="well" ng-repeat="file in toimintasuunnitelma.files">
-                                <a ng-href="{{ file.path }}" style="margin:auto;">
+                                <a ng-href="{{ file.path }}" style="margin:auto;" target="newtab" >
                                     <img src="../images/pdf.png" alt="">&nbsp;&nbsp;{{ file.name }}
                                 </a>
                             </div>

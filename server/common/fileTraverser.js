@@ -48,7 +48,6 @@ var traverse = function(path) {
 
   traverseFileSystem(path);
   return response;
-  // return traverseFileSystem
 }
 
-exports.traverse = traverse;
+module.exports = traverse;
