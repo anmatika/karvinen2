@@ -8,24 +8,21 @@
                 </h2>
                 <hr>
                 <hr class="visible-xs">
-                <p>
-                    <p>Jäsenmaksun voit maksaa Karviseen tai Karvinen ry:n tilille.</p>
-                    <ul>
-                        <li>Jäsenmaksu on 12 €</li>
-                        <li>Tilinumero: <span>{{ tilinumero="NORDEA FI82 1025 3000 208168" }}</span>
-                            <button id="copy_clipboard" ui-zeroclip zeroclip-model="tilinumero" class="hidden-xs step_copy_btn pull-right" title="Kopioi tilinumero leikepöydälle">
-                            <span class="octicon octicon-clippy"></span>
-                            </button>
-                        </li>
-                        <li>Viesti: jäsenmaksu 2014 ja nimi(kenen jäsenmaksu on kyseessä).</li>
-                    </ul>
+                
+                <p>Jäsenmaksun voit maksaa Karviseen tai Karvinen ry:n tilille.</p>
+                <ul>
+                    <li>Jäsenmaksu on 12 €</li>
+                    <li>Tilinumero: <span>NORDEA {{ tilinumero="FI82 1025 3000 208168" }}</span>
+                        <button id="copy_clipboard" ui-zeroclip zeroclip-model="tilinumero" class="hidden-xs step_copy_btn pull-right" title="Kopioi tilinumero leikepöydälle">
+                        <span class="octicon octicon-clippy"></span>
+                        </button>
+                    </li>
+                    <li>Viesti: jäsenmaksu 2014 ja nimi(kenen jäsenmaksu on kyseessä).</li>
+                </ul>
                 <p>
                     <b>Jos olet uusi jäsen, sinun tulee ensin täyttää jäsenanomus Karvisen toimistosta.</b>
                 </p>
-            </p>
-        </p>
-        
+            </div>
+        </div>
     </div>
-</div>
-</div>
 </div>
