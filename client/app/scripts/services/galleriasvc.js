@@ -8,127 +8,178 @@
  * Service in the karvinenApp.
  */
 angular.module('karvinenApp')
-  .service('galleriaSvc', function ($http, $q) {
-     
-      function getSlides() {
-	   	
-	   	var deferred = $q.defer();
+	.service('galleriaSvc', function($http, $q) {
 
-	   	$http.get('/routes/galleria')
-	   		.success(function(data){
-	   			// data comes as
-	   			// images: {
-	   			// 	"foldername_1": ["foo.png", "daa.png"],
-	   			// 	"foldername_2": ["abc.png"], "fii.png"]
-	   			// }
-	   			var slides = [],
-	   			slideItem = {},
-	   			img;
-	   			// iterate properties(folders) of object "galleria_1", galleria_2...
-	   			for (var folder in data.images){
-	   				var fileNames = data.images[folder];
-	   				
-	   				slideItem = { 
-	   							  header: folder,
-	   							  images: [] 
-	   							};
+		function getSlides() {
 
-	   				// iterate array of fileNames
-	   				for (var i in fileNames){
-	   					var fileName = fileNames[i];
-					 	img = {
-	   					 	"image": "/images/galleria/" + folder + "/" + encodeURI(fileName)
-	   					}
-	   					
-	   					slideItem.images.push(img);
-	   					   					
-	   				}
+			var deferred = $q.defer();
 
-	   				slides.push(slideItem);   				
-	   			}
+			$http.get('/routes/galleria')
+				.success(function(data) {
+					// data comes as
+					// images: {
+					// 	"foldername_1": ["foo.png", "daa.png"],
+					// 	"foldername_2": ["abc.png"], "fii.png"]
+					// }
+					var slides = [],
+						slideItem = {},
+						img;
+					// iterate properties(folders) of object "galleria_1", galleria_2...
+					for (var folder in data.images) {
+						var fileNames = data.images[folder];
 
-	   			// console.log(slides);
-		   		
-	   			deferred.resolve(slides);
+						slideItem = {
+							header: folder,
+							images: []
+						};
 
-		   		// GOAL:
-		   		//
-		   		// 	$scope.slideItems = [
-		   		// 			{ 
-		   		// 				header: "galleria_1",
-		   		// 			  	images: [ 
-		   		// 					{ image: '/images/galleria/galleria_1/1.jpg' },
-		   		// 					{ image: '/images/galleria/galleria_1/2.jpg' }
-							// 	]
-							// },
-							// { 
-		   		// 				header: "2",
-		   		// 			  	images: [ 
-		   		// 					{ image: '/images/galleria/2/2.jpg' },
-		   		// 					{ image: '/images/galleria/2/3.jpg' }
-							// 	]
-							// }
-		   		// 	]
-   		}).
-   		error(function(data){
-   			console.log(data);
-   			deferred.reject(data);
-   		});
+						// iterate array of fileNames
+						for (var i in fileNames) {
+							var fileName = fileNames[i];
+							img = {
+								"image": "/images/galleria/" + folder + "/" + encodeURI(fileName)
+							}
 
-   		return deferred.promise;
-   }
+							slideItem.images.push(img);
 
-   function getToimintasuunnitelmat() {
-	   	
-	   	var deferred = $q.defer();
+						}
 
-	   	$http.get('/routes/toimintasuunnitelmat')
-	   		.success(function(data){
-	   			// data comes as
-	   			// files: {
-	   			// 	"foldername_1": ["foo.png", "daa.png"],
-	   			// 	"foldername_2": ["abc.png"], "fii.png"]
-	   			// }
-	   			console.log('routes/toimintasuunnitelmat: ' + data);
-	   			var slides = [],
-	   			slideItem = {},
-	   			file;
-	   			// iterate properties(folders) of object "galleria_1", galleria_2...
-	   			for (var folder in data.files){
-	   				var fileNames = data.files[folder];
-	   				
-	   				slideItem = { 
-	   							  header: folder,	   							  
-	   							  files: [] 
-	   							};
+						slides.push(slideItem);
+					}
 
-	   				// iterate array of fileNames
-	   				for (var i in fileNames){
-	   					var fileName = fileNames[i];
-					 	file = {
-	   					 	"path": "/pdf/toimintasuunnitelmat/" + folder + "/" + encodeURI(fileName),
-	   					 	"name": fileName
-	   					}
-	   					console.log('file: ' + file);
-	   					slideItem.files.push(file);
-	   					   					
-	   				}
+					// console.log(slides);
 
-	   				slides.push(slideItem);   				
-	   			}
-		   		
-	   			deferred.resolve(slides);		   	
-   		}).
-   		error(function(data){
-   			console.log(data);
-   			deferred.reject(data);
-   		});
+					deferred.resolve(slides);
 
-   		return deferred.promise;
-   }
+					// GOAL:
+					//
+					// 	$scope.slideItems = [
+					// 			{ 
+					// 				header: "galleria_1",
+					// 			  	images: [ 
+					// 					{ image: '/images/galleria/galleria_1/1.jpg' },
+					// 					{ image: '/images/galleria/galleria_1/2.jpg' }
+					// 	]
+					// },
+					// { 
+					// 				header: "2",
+					// 			  	images: [ 
+					// 					{ image: '/images/galleria/2/2.jpg' },
+					// 					{ image: '/images/galleria/2/3.jpg' }
+					// 	]
+					// }
+					// 	]
+				}).
+			error(function(data) {
+				console.log(data);
+				deferred.reject(data);
+			});
 
-   return {
-   		getSlides: getSlides,
-   		getToimintasuunnitelmat: getToimintasuunnitelmat
-   }
-  });
+			return deferred.promise;
+		}
+
+		function getToimintasuunnitelmat() {
+
+			var deferred = $q.defer();
+
+			$http.get('/routes/toimintasuunnitelmat')
+				.success(function(data) {
+					// data comes as
+					// files: {
+					// 	"foldername_1": ["foo.png", "daa.png"],
+					// 	"foldername_2": ["abc.png"], "fii.png"]
+					// }
+					console.log('routes/toimintasuunnitelmat: ' + data);
+					var slides = [],
+						slideItem = {},
+						file;
+					// iterate properties(folders) of object "galleria_1", galleria_2...
+					for (var folder in data.files) {
+						var fileNames = data.files[folder];
+
+						slideItem = {
+							header: folder,
+							files: []
+						};
+
+						// iterate array of fileNames
+						for (var i in fileNames) {
+							var fileName = fileNames[i];
+							file = {
+								"path": "/pdf/toimintasuunnitelmat/" + folder + "/" + encodeURI(fileName),
+								"name": fileName
+							}
+							console.log('file: ' + file);
+							slideItem.files.push(file);
+
+						}
+
+						slides.push(slideItem);
+					}
+
+					deferred.resolve(slides);
+				}).
+			error(function(data) {
+				console.log(data);
+				deferred.reject(data);
+			});
+
+			return deferred.promise;
+		}
+
+		function getToimintakertomukset() {
+
+			var deferred = $q.defer();
+
+			$http.get('/routes/toimintakertomukset')
+				.success(function(data) {
+					// data comes as
+					// files: {
+					// 	"foldername_1": ["foo.png", "daa.png"],
+					// 	"foldername_2": ["abc.png"], "fii.png"]
+					// }
+					console.log('routes/toimintakertomukset: ' + data);
+					var slides = [],
+						slideItem = {},
+						file;
+					// iterate properties(folders) of object "galleria_1", galleria_2...
+					for (var folder in data.files) {
+						var fileNames = data.files[folder];
+
+						slideItem = {
+							header: folder,
+							files: []
+						};
+
+						// iterate array of fileNames
+						for (var i in fileNames) {
+							var fileName = fileNames[i];
+							file = {
+								"path": "/pdf/toimintakertomukset/" + folder + "/" + encodeURI(fileName),
+								"name": fileName
+							}
+							console.log('file: ' + file);
+							slideItem.files.push(file);
+
+						}
+
+						slides.push(slideItem);
+					}
+
+					deferred.resolve(slides);
+				}).
+			error(function(data) {
+				console.log(data);
+				deferred.reject(data);
+			});
+
+			return deferred.promise;
+		}
+
+
+		return {
+			getSlides: getSlides,
+			getToimintasuunnitelmat: getToimintasuunnitelmat,
+			getToimintakertomukset: getToimintakertomukset
+		}
+	});

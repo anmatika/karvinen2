@@ -8,10 +8,17 @@
  * Controller of the karvinenApp
  */
 angular.module('karvinenApp')
-  .controller('ToimintakertomusCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('ToimintakertomusCtrl', function ($scope, galleriaSvc) {
+    $scope.getToimintakertomukset = function() {
+			galleriaSvc.getToimintakertomukset()
+				.then(function(toimintakertomukset) {
+						console.log('Toimintakertomukset: ' + toimintakertomukset);
+						$scope.toimintakertomukset = toimintakertomukset;
+					},
+					function(reason) {
+						console.log(reason);
+					});
+		}
+
+		$scope.getToimintakertomukset();
   });

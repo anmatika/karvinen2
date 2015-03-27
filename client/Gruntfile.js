@@ -7,7 +7,7 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -68,27 +68,27 @@ module.exports = function (grunt) {
     },
     protractor: {
       options: {
-            configFile: 'test/protractor.conf.js',
-            keepAlive: true, // If false, the grunt process stops when the test fails.
-            noColor: false, // If true, protractor will not use colors in its output.
-            args: {
-                // Arguments passed to the command
-            }
-        },
-      chrome: {
-          options: {
-                args: {
-                    browser: "chrome"
-                }
-            }
+        configFile: 'test/protractor.conf.js',
+        keepAlive: true, // If false, the grunt process stops when the test fails.
+        noColor: false, // If true, protractor will not use colors in its output.
+        args: {
+          // Arguments passed to the command
+        }
       },
-      firefox: {
-          options: {
-              args: {
-                  browser: "firefox"
-              }
+      chrome: {
+        options: {
+          args: {
+            browser: "chrome"
           }
         }
+      },
+      firefox: {
+        options: {
+          args: {
+            browser: "firefox"
+          }
+        }
+      }
     },
     // The actual grunt server settings
     connect: {
@@ -101,9 +101,9 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           open: true,
-          middleware: function (connect) {
-            
-            var defaultMiddleware = [                          
+          middleware: function(connect) {
+
+            var defaultMiddleware = [
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -111,7 +111,7 @@ module.exports = function (grunt) {
               ),
               connect.static(appConfig.app),
             ]
-        
+
             return defaultMiddleware;
           }
         }
@@ -119,7 +119,7 @@ module.exports = function (grunt) {
       test: {
         options: {
           port: 9001,
-          middleware: function (connect) {
+          middleware: function(connect) {
             return [
               connect.static('.tmp'),
               connect.static('test'),
@@ -134,10 +134,10 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-        open: true,
-        base: '<%= yeoman.dist %>'
+          open: true,
+          base: '<%= yeoman.dist %>'
         }
-      },      
+      },
     },
 
     // Make sure code styles are up to par and there are no obvious mistakes
@@ -194,7 +194,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath: /\.\.\//
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -268,7 +268,7 @@ module.exports = function (grunt) {
       ],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
+        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
       }
     },
 
@@ -362,40 +362,49 @@ module.exports = function (grunt) {
     copy: {
       dist: {
         files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*',
-            'index.js',
-            'package.json',
-            'images/galleria/**/*.*'
-          ]
-        }, 
-        {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
-        }, 
-        {
-          expand: true,
-          cwd: '<%= yeoman.app %>/pdf',
-          dest: '<%= yeoman.dist %>/pdf',          
-          src: [ '**' ],
-        }, 
-        {
-          expand: true,
-          cwd: 'bower_components/bootstrap/dist',
-          src: 'fonts/*',
-          dest: '<%= yeoman.dist %>'
-        }]
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.dist %>',
+            src: [
+              '*.{ico,png,txt}',
+              '.htaccess',
+              '*.html',
+              'views/{,*/}*.html',
+              'images/{,*/}*.{webp}',
+              'fonts/{,*/}*.*',
+              'index.js',
+              'package.json',
+              'images/galleria/**/*.*'
+            ]
+          }, {
+            expand: true,
+            cwd: '.tmp/images',
+            src: ['generated/*'],
+            dest: '<%= yeoman.dist %>/images',
+          }, {
+            expand: true,
+            cwd: '<%= yeoman.app %>/pdf',
+            src: ['**'],
+            dest: '<%= yeoman.dist %>/pdf',
+          }, {
+            expand: true,
+            cwd: 'bower_components/bootstrap/dist',
+            src: 'fonts/*',
+            dest: '<%= yeoman.dist %>'
+          }, {
+            expand: true,
+            cwd: 'bower_components/octicons/octicons',
+            src: '*.{ttf,eot,svg,woff}',
+            dest: '<%= yeoman.dist %>/styles'
+          },          
+          {
+            expand: true,
+            cwd: 'bower_components',
+            src: 'zeroclipboard/**/*',
+            dest: '<%= yeoman.dist %>/bower_components'
+          }
+        ]
       },
       styles: {
         expand: true,
@@ -435,10 +444,10 @@ module.exports = function (grunt) {
   });
 
 
-  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
+  grunt.registerTask('serve', 'Compile then start a connect web server', function(target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
-    } 
+    }
 
     grunt.task.run([
       'clean:server',
@@ -450,7 +459,7 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
+  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function(target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
   });
@@ -473,10 +482,10 @@ module.exports = function (grunt) {
 
   grunt.registerTask('e2e', [
     'clean:server',
-    'connect:test', 
+    'connect:test',
     'protractor'
   ]);
-  
+
 
   grunt.registerTask('build', [
     'clean:dist',

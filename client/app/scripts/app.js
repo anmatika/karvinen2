@@ -17,9 +17,10 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'ngMap'
+    'ngMap',
+    'zeroclipboard'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, uiZeroclipConfigProvider) {
   $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -110,5 +111,9 @@ angular
       })
       .otherwise({
         redirectTo: '/'
+      });
+        // config ZeroClipboard
+      uiZeroclipConfigProvider.setZcConf({
+        swfPath: '../bower_components/zeroclipboard/dist/ZeroClipboard.swf'
       });
   });
