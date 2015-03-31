@@ -15,9 +15,7 @@ nav {
   position: relative;
   height: 180px;
   margin-bottom: 20px;
-
-
-
+  
   #logo_image {
     
     a {
@@ -38,7 +36,16 @@ nav {
       // center image
       display: block;
       margin: 0 auto;
-      
+      transition: opacity 0.1s ease-in-out;
+      &:hover {
+        opacity: 0.9;
+      }
+      &:active {
+         box-shadow: 0 0 0 0 black;
+        -webkit-box-shadow: 0 0 0 0 black;
+        -moz-box-shadow: 0 0 0 0 black;
+      }
+    
     }
   }  
 }

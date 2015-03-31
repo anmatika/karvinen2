@@ -9,6 +9,7 @@ var galleria = require('../js/galleria');
 var database = require('../common/database');
 var toimintasuunnitelmat = require('../js/toimintasuunnitelmat');
 var toimintakertomukset = require('../js/toimintakertomukset');
+var jasenkirjeet = require('../js/jasenkirjeet');
 
 // Setup a route /galleria/images
 router.get('/galleria', galleria.getImages); 
@@ -48,6 +49,7 @@ router.post('/palaute', function (req, res){
 
 router.get('/toimintasuunnitelmat', toimintasuunnitelmat.get);
 router.get('/toimintakertomukset', toimintakertomukset.get);
+router.get('/jasenkirjeet', jasenkirjeet.get);
 
 // Expose the module
 module.exports = router;

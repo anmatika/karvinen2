@@ -10,7 +10,7 @@
 angular.module('karvinenApp')
 	.controller('ToimintasuunnitelmaCtrl', function($scope, galleriaSvc) {
 		$scope.getToimintasuunnitelmat = function() {
-			galleriaSvc.getToimintasuunnitelmat()
+			galleriaSvc.getPdfs('toimintasuunnitelmat')
 				.then(function(toimintasuunnitelmat) {
 						console.log('toimintasuunnitelmat: ' + toimintasuunnitelmat);
 						$scope.toimintasuunnitelmat = toimintasuunnitelmat;

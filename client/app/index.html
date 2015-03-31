@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Tukiyhdistys Karvinen Ry.</title>
     <link rel="shortcut icon" href="favicon.ico" />
-    <meta name="description" content="Yhdistyksen tarkoitus on parantaa mielenterveyskuntoutujien ja heidän läheistensä elämänlaatua. Olemme auki ma - pe: klo 9 - 15 ja la: klo 10 - 15, sunnuntaisin suljettu.">
+    <meta name="description" content="Karvinen on matalan kynnyksen kohtaamispaikka mielenterveyskuntoutujille, jossa hyvän mielen lisäksi tarjoamme kahvia, ruokaa, vertaistukea ja monipuolista toimintaa ryhmien ja retkien muodossa.">
     <meta name="author" content="4ntti.matikainen@gmail.com">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -37,7 +37,7 @@
         your browser</a> to improve your experience.</p>
         <![endif]-->
         
-      <div id="top_logo" class="hidden-xs">
+      <div id="top_logo" ng-controller="TopLogoCtrl" class="hidden-xs">
         <div id="logo_image">
           <a ng-href="#/"><img src="images/karvinenlogo.png" /></a>
         </div>
@@ -60,9 +60,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="collapse-1" ng-controller="HeaderCtrl" nav-collapse="">
               
-              
-              <!-- <div id="header_pic"><img src="images/leaf.png" /></div> -->
-              <!-- <div id="header_pic2"><img src="images/leaf2.png" /></div> -->
               <ul class="nav navbar-nav">
                 <li class="dropdown" ng-class="{ active: isActive('/')
                   || isActive('/organisaatiokaavio')
@@ -99,7 +96,7 @@
                     <li><a ng-href="#/jaseneksiliittyminen">Jäseneksi liittyminen
                     </a></li>
                     <li><a ng-href="#/jasenedut">Jäsenedut</a></li>
-                    <li><a ng-href="#/jasenkirje">Jäsenkirje</a></li>
+                    <li><a ng-href="#/jasenkirje">Jäsenkirjeet</a></li>
                     <li><a ng-href="#/jasenkysely">Jäsenkysely</a></li>
                   </ul>
                 </li>
@@ -126,7 +123,7 @@
                 <br>
                 <span class="glyphicon glyphicon-earphone"> </span>
                 <span>050 554 3115</span>
-                <br><span class="glyphicon glyphicon-time"></span><span> ma - pe: 9 - 15 | la: 10 - 15 | su: suljettu </span>
+                <br><span class="glyphicon glyphicon-time"></span><span> ma - pe: 9 - 15 | la - su: suljettu </span>
                 <br><span class="glyphicon glyphicon-envelope"> </span>
                 <a href="mailto:tukiyhdistys@kolumbus.fi">tukiyhdistys@kolumbus.fi</a>
                 <br> <a href="https://fi-fi.facebook.com/pages/Tukiyhdistys-Karvinen-ry/204269495468" target="newtab"><img src="../images/fb.jpg" alt=""></a>
@@ -190,9 +187,9 @@
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/kuvagalleria.js"></script>
         <script src="scripts/controllers/yhteystiedot.js"></script>
-        <script src="scripts/controllers/hallitus.js"></script>
         <script src="scripts/controllers/ryhmat.js"></script>
         <script src="scripts/controllers/ruokalista.js"></script>
+        <script src="scripts/controllers/toplogo.js"></script>
         <script src="scripts/services/galleriasvc.js"></script>
         <script src="scripts/controllers/vieraskirja.js"></script>
         <script src="scripts/services/vieraskirjasvc.js"></script>

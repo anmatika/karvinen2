@@ -78,18 +78,12 @@ angular.module('karvinenApp')
 			return deferred.promise;
 		}
 
-		function getToimintasuunnitelmat() {
-
+		function getPdfs(pdf_type_name) {
 			var deferred = $q.defer();
 
-			$http.get('/routes/toimintasuunnitelmat')
+			$http.get('/routes/' + pdf_type_name)
 				.success(function(data) {
-					// data comes as
-					// files: {
-					// 	"foldername_1": ["foo.png", "daa.png"],
-					// 	"foldername_2": ["abc.png"], "fii.png"]
-					// }
-					console.log('routes/toimintasuunnitelmat: ' + data);
+					console.log(pdf_type_name + ':' + data);
 					var slides = [],
 						slideItem = {},
 						file;
@@ -106,7 +100,7 @@ angular.module('karvinenApp')
 						for (var i in fileNames) {
 							var fileName = fileNames[i];
 							file = {
-								"path": "/pdf/toimintasuunnitelmat/" + folder + "/" + encodeURI(fileName),
+								"path": "/pdf/" + pdf_type_name + "/" + folder + "/" + encodeURI(fileName),
 								"name": fileName
 							}
 							console.log('file: ' + file);
@@ -126,60 +120,9 @@ angular.module('karvinenApp')
 
 			return deferred.promise;
 		}
-
-		function getToimintakertomukset() {
-
-			var deferred = $q.defer();
-
-			$http.get('/routes/toimintakertomukset')
-				.success(function(data) {
-					// data comes as
-					// files: {
-					// 	"foldername_1": ["foo.png", "daa.png"],
-					// 	"foldername_2": ["abc.png"], "fii.png"]
-					// }
-					console.log('routes/toimintakertomukset: ' + data);
-					var slides = [],
-						slideItem = {},
-						file;
-					// iterate properties(folders) of object "galleria_1", galleria_2...
-					for (var folder in data.files) {
-						var fileNames = data.files[folder];
-
-						slideItem = {
-							header: folder,
-							files: []
-						};
-
-						// iterate array of fileNames
-						for (var i in fileNames) {
-							var fileName = fileNames[i];
-							file = {
-								"path": "/pdf/toimintakertomukset/" + folder + "/" + encodeURI(fileName),
-								"name": fileName
-							}
-							console.log('file: ' + file);
-							slideItem.files.push(file);
-
-						}
-
-						slides.push(slideItem);
-					}
-
-					deferred.resolve(slides);
-				}).
-			error(function(data) {
-				console.log(data);
-				deferred.reject(data);
-			});
-
-			return deferred.promise;
-		}
-
 
 		return {
 			getSlides: getSlides,
-			getToimintasuunnitelmat: getToimintasuunnitelmat,
-			getToimintakertomukset: getToimintakertomukset
+			getPdfs: getPdfs
 		}
 	});

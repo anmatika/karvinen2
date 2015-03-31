@@ -41,10 +41,6 @@ angular
         templateUrl: 'views/kuvagalleria.html',
         controller: 'KuvagalleriaCtrl'
       })
-      .when('/hallitus', {
-        templateUrl: 'views/hallitus.html',
-        controller: 'HallitusCtrl'
-      })
       .when('/ruokalista', {
         templateUrl: 'views/ruokalista.html',
         controller: 'RuokalistaCtrl'
@@ -116,4 +112,5 @@ angular
       uiZeroclipConfigProvider.setZcConf({
         swfPath: '../bower_components/zeroclipboard/dist/ZeroClipboard.swf'
       });
+
   });
